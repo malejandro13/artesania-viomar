@@ -6,4 +6,8 @@ export const MenuWrapper = styled.div`
   right: 30px;
   user-select: none;
   z-index: 2;
+
+  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+    position: initial;
+  }
 `;
