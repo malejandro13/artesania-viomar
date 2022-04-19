@@ -3,7 +3,9 @@ const colors = {
   white: '#fff',
 }
 
-const breakpoints = {}
+const breakpoints = {
+  medium: '990px',
+}
 
 export const theme = {
   colors,
