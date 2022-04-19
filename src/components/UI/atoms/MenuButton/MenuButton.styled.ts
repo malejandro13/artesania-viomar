@@ -36,4 +36,8 @@ export const Button = styled.button<ButtonProps>`
       transform: rotate(-45deg) translate(-1px, -1px);
     }
   `}
+
+  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+    display: none;
+  }
 `
