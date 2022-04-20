@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ThumbProps, ThumbList } from './Thumb.interfaces';
-import { Image, Item, List } from './Thumb.styled';
+import { Button, Image, Item, List } from './Thumb.styled';
 
 export const Thumb = ({
   thumbs,
@@ -26,7 +26,9 @@ export const Thumb = ({
           className={selectedThumb === thumbName ? 'active' : ''}
           onClick={() => handleSelectedThumb(thumbName)}
         >
-          <Image src={imageURL} alt={imageAltText} />
+          <Button>
+            <Image src={imageURL} alt={imageAltText} />
+          </Button>
         </Item>
       ))}
     </List>

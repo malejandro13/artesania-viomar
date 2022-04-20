@@ -50,7 +50,7 @@ export const Text = styled.p`
 
   &.typography--variant-body1 {
     font-size: 1rem;
-    margin: 1.25rem 0;
+    margin: 1.5rem 0;
   }
   
   &.typography--variant-body2 {

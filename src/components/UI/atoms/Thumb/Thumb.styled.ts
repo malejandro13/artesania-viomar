@@ -11,7 +11,6 @@ export const List = styled.ul`
 export const Item = styled.li`
   list-style: none;
   display: inline-block;
-  cursor: pointer;
   transition: 0.5s;
   background-color: rgba(255, 255, 255, 0.25);
   padding: 5px;
@@ -23,8 +22,8 @@ export const Item = styled.li`
     position: absolute;
     top: -150px;
     right: 0;
-    left: -100px;
-    font-size: 6em;
+    left: -40px;
+    font-size: 5em;
     content: attr(data-text);
     white-space: nowrap;
     color: rgba(0, 0, 0, 0.3);
@@ -47,10 +46,17 @@ export const Item = styled.li`
 
     &::before {
       top: -200px;
+      left: -100px;
       font-size: 8em;
     }
   }
     
+`;
+
+export const Button = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
 `;
 
 export const Image = styled.img`
