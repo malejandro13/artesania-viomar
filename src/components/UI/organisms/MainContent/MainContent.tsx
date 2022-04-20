@@ -10,6 +10,7 @@ export const MainContent = ({
   ctaText,
   ctaAriaLabel,
   imageUrl,
+  imageAltText,
 }: MainContentProps) => {
   return (
     <Main>
@@ -21,7 +22,7 @@ export const MainContent = ({
         </Link>
       </TextBox>
       <ImageBox aria-hidden="true">
-        <Image src={imageUrl} />
+        <Image src={imageUrl} alt={imageAltText} />
       </ImageBox>
     </Main>
   )
