@@ -4,7 +4,7 @@ import { HeaderWrapper, Logo } from './Header.styled';
 
 export const Header = () => (
   <HeaderWrapper>
-    <Link href="/">
+    <Link href="/" passHref>
       <Logo>Artesanía Viomar</Logo>
     </Link>
     <Menu  />

@@ -9,7 +9,7 @@ export const MenuNavigation = ({ menuList, isMenuOpen }: MenuNavigationProps) =>
     <List isMenuOpen={isMenuOpen}>
       {menuList.map(({ label, link }: MenuList) => (
         <Item>
-          <Link href={link}>
+          <Link href={link} passHref>
             <Anchor className={router.pathname === link ? 'active' : ''}>
               {label}
             </Anchor>

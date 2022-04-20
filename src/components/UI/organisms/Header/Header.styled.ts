@@ -21,5 +21,4 @@ export const Logo = styled.a`
   color: #fff;
   text-decoration: none;
   font-size: 2em;
-  cursor: pointer;
 `;

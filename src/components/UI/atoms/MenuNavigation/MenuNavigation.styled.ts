@@ -25,7 +25,6 @@ export const List = styled.ul<ListProps>`
 
 export const Item = styled.li`
   list-style: none;
-  cursor: pointer;
 `;
 
 export const Anchor = styled.a`
