@@ -9,7 +9,6 @@ export enum TypographyElements {
   subheading2 = "h6",
   body1 = "p",
   body2 = "p",
-  body3 = "p",
 };
 
 export type TypographyVariants = keyof typeof TypographyElements;

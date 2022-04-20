@@ -4,9 +4,13 @@ export const Text = styled.p`
   color: ${({ theme: { colors }, color }) => color ? color : colors.white};
 
   &.typography--variant-h1 {
-    font-size: 6rem;
+    font-size: 2.5em;
     line-height: 1.2em;
     font-weight: 700;
+
+    @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+      font-size: 4rem;
+    }    
   }
   
   &.typography--variant-h2 {
@@ -43,16 +47,13 @@ export const Text = styled.p`
     font-size: 0.875rem;
     font-weight: 500;
   }
-  
-  &.typography--variant-body1 {
-    font-size: 1.25rem;
-  }
 
-  &.typography--variant-body2 {
+  &.typography--variant-body1 {
     font-size: 1rem;
+    margin: 1.25rem 0;
   }
   
-  &.typography--variant-body3 {
+  &.typography--variant-body2 {
     font-size: 0.875rem;
   }
 `;
