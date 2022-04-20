@@ -23,6 +23,7 @@ export const Item = styled.li`
     position: absolute;
     top: -150px;
     right: 0;
+    left: -100px;
     font-size: 6em;
     content: attr(data-text);
     white-space: nowrap;
@@ -45,9 +46,7 @@ export const Item = styled.li`
     height: 80px;
 
     &::before {
-      position: absolute;
       top: -200px;
-      left: -100px;
       font-size: 8em;
     }
   }

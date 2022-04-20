@@ -6,8 +6,10 @@ export interface MenuList {
 export interface MenuNavigationProps {
   menuList: MenuList[];
   isMenuOpen?: boolean;
+  backgroundColor: string;
 }
 
 export interface ListProps {
   isMenuOpen?: boolean;
+  backgroundColor: string;
 }
