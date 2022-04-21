@@ -12,16 +12,16 @@ export const Main = styled.main`
   @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
     margin-top: 0;
     flex-direction: row;
+    padding: 0;
   }
-  
 `;
 
 export const TextBox = styled.div`
   position: relative;
-  max-width: 100%;
+  width: 100%;
 
   @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
-    max-width: 600px;
+    max-width: 630px; 
   }
 `;
 
@@ -42,6 +42,7 @@ export const ImageBox = styled.div`
   display: flex;
   justify-content: center;
   z-index: 1;
+  margin: 1.25rem 0;
 
   @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
     width: 600px;
@@ -50,7 +51,7 @@ export const ImageBox = styled.div`
 `;
 
 export const Image = styled.img`
-  max-width: 300px;
+  max-width: 250px;
 
   @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
     max-width: 400px;

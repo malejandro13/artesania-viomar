@@ -20,7 +20,7 @@ export const Item = styled.li`
 
   &::before {
     position: absolute;
-    top: -150px;
+    top: -120px;
     right: 0;
     left: -40px;
     font-size: 5em;

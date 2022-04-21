@@ -6,7 +6,7 @@ import { HeaderProps } from './Header.interfaces';
 export const Header = ({ backgroundColor }: HeaderProps) => (
   <HeaderWrapper>
     <Link href="/" passHref>
-      <Logo>Artesanía Viomar</Logo>
+      <Logo>Viomar</Logo>
     </Link>
     <Menu backgroundColor={backgroundColor}  />
   </HeaderWrapper>
