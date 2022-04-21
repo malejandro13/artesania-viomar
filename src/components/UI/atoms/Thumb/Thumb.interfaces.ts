@@ -1,4 +1,4 @@
-export interface ThumbList {
+export interface ThumbObject {
   thumbName: string;
   dataText: string;
   imageURL: string;
@@ -6,6 +6,6 @@ export interface ThumbList {
 };
 
 export interface ThumbProps {
-  thumbs: ThumbList[];
+  thumbs: ThumbObject[];
   onSelectedThumb: Function;
 };

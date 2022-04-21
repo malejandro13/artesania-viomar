@@ -1,10 +1,10 @@
-export interface MenuList {
+export interface MenuObject {
   label: string;
   link: string;
 }
 
 export interface MenuNavigationProps {
-  menuList: MenuList[];
+  menuList: MenuObject[];
   isMenuOpen?: boolean;
   backgroundColor: string;
 }

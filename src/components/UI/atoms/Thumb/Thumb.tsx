@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ThumbProps, ThumbList } from './Thumb.interfaces';
+import { ThumbProps, ThumbObject } from './Thumb.interfaces';
 import { Button, Image, Item, List } from './Thumb.styled';
 
 export const Thumb = ({
@@ -19,7 +19,7 @@ export const Thumb = ({
 
   return (
     <List>
-      {thumbs.map(({ thumbName, dataText, imageURL, imageAltText }: ThumbList) => (
+      {thumbs.map(({ thumbName, dataText, imageURL, imageAltText }: ThumbObject) => (
         <Item
           key={`thumb-${thumbName}`}
           data-text={dataText}
