@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const List = styled.ul`
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
   display: flex;

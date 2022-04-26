@@ -18,8 +18,8 @@ const Home: NextPage = () => {
   };
 
   return (
-    <Section backgroundColor={mainContentInfo.backgroundColor} >
-      <Header backgroundColor={mainContentInfo.backgroundColor}  />
+    <Section >
+      <Header />
       <MainContent {...mainContentInfo} />
       <Thumb
         thumbs={THUMBS}

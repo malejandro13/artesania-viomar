@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { SectionProps } from './index.interfaces';
 
-export const Section =styled.section<SectionProps>`
+export const Section =styled.section`
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -11,19 +10,23 @@ export const Section =styled.section<SectionProps>`
   overflow-x: hidden;
   padding: 20px;
   padding-bottom: 120px;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background: #bb9a83;
+  background: linear-gradient(to right, #7f695c, #bb9a83);
+  overflow: hidden;
 
   @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
     padding: 70px;
 
     &::before {
       content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 80%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.1);
+      position: fixed;
+      top: -10rem;
+      right: -20rem;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      border: 14rem solid rgba(0,0,0,0.05);
+      
     }
   }
-`
+`;

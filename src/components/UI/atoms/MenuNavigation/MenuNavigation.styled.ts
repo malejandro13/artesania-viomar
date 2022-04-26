@@ -3,7 +3,8 @@ import { ListProps } from './MenuNavigation.interfaces';
 
 export const List = styled.ul<ListProps>`
   display: none;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background: #bb9a83;
+  background: linear-gradient(to right, #7f695c, #bb9a83);
 
   ${({ isMenuOpen }) => isMenuOpen && `
     position: fixed;
@@ -21,7 +22,7 @@ export const List = styled.ul<ListProps>`
     position: relative;
     display: flex;
     flex-direction: row;
-    background-color: initial;
+    background: initial;
   }
 `;
 

@@ -26,14 +26,37 @@ export const TextBox = styled.div`
 `;
 
 export const Anchor = styled.a`
-  display: inline-block;
-  padding: 8px 20px;
-  background-color: #fff;
-  color: #333;
-  border-radius: 40px;
+  position: absolute;
+  left: -7rem;
+  padding: 1rem 0rem;
+  color: #fff;
   font-weight: 500;
   letter-spacing: 1px;
   text-decoration: none;
+  border-end-end-radius: 60px;
+  border-start-end-radius: 60px;
+  width: 18rem;
+  background: linear-gradient(to right,#bb9a83,#7f695c);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  text-align: end;
+
+  &::after {
+    content: '>';
+    font-size: 1.5rem;
+    padding: 0.6rem 1.2rem;
+    background: #b99881;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    background: linear-gradient(to right,#d39f79,#9e7151);
+  }
+
+  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+    padding: 1.5rem 0.3rem;
+    
+    &::after {
+      margin: 0 1rem;
+    }
+  }
 `;
 
 export const ImageBox = styled.div`
@@ -42,11 +65,12 @@ export const ImageBox = styled.div`
   display: flex;
   justify-content: center;
   z-index: 1;
-  margin: 1.25rem 0;
+  margin: 7rem 0 2rem 0;
 
   @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
     width: 600px;
     justify-content: flex-end;
+    margin-top: 1.25rem;  
   }
 `;
 
