@@ -6,5 +6,4 @@ export interface MainContentProps {
   ctaAriaLabel: string;
   imageUrl: string;
   imageAltText: string;
-  backgroundColor: string;
 };

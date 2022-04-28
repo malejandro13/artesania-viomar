@@ -15,6 +15,7 @@ export const Item = styled.li`
   background-color: rgba(255, 255, 255, 0.25);
   padding: 5px;
   border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
   margin: 0 3px;
   height: 50px;
 
