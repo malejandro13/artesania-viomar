@@ -23,9 +23,9 @@ export const Card = styled.div`
     transition: 0.5s ease-in-out;
   }
 
-  &:hover:before,
-  &:focus-visible:before,
-  &:focus-within:before {
+  &:hover::before,
+  &:focus-visible::before,
+  &:focus-within::before {
     clip-path: circle(300px at 50% -3%);
   }
 
@@ -53,10 +53,12 @@ export const ImageBox = styled.div`
   z-index: 1000;
   width: 100%;
   height: 100%;
-  transition: .5s;
+  transition: .3s;
 
-  ${Card}:hover,
-  ${Card}:focus-visible,
+  ${Card}:hover & {
+    top: 0%;
+    transform: translateY(-25%);
+  }
   ${Card}:focus-within & {
     top: 0%;
     transform: translateY(-25%);
@@ -77,11 +79,16 @@ export const ContentBox = styled.div`
   width: 100%;
   height: 100px;
   text-align: center;
-  transition: 1s;
+  transition: .7s;
   z-index: 90;
 
-  ${Card}:hover,
-  ${Card}:focus-visible,
+  ${Card}:hover & {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
   ${Card}:focus-within & {
     height: 250px;
     display: flex;
@@ -102,13 +109,16 @@ export const Anchor = styled.a`
   color: #111;
   opacity: 0;
   transform: translateY(50px);
-  transition: .5s;
+  transition: .3s;
 
-  ${Card}:hover,
-  ${Card}:focus-visible,
+  ${Card}:hover & {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: .5s;
+  }
   ${Card}:focus-within & {
     opacity: 1;
     transform: translateY(0px);
-    transition-delay: .7s;
+    transition-delay: .5s;
   }
 `;
