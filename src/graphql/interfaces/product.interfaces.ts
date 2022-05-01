@@ -3,7 +3,7 @@ interface MainImageResponse {
   description: string;
 };
 
-export interface ProductResponse {
+export interface ProductDataResponse {
   title: string;
   productType: string;
   category: string;
@@ -15,9 +15,9 @@ export interface ProductResponse {
 };
 
 interface ItemsReponse {
-  items: ProductResponse[];
+  items: ProductDataResponse[];
 };
 
-export interface ProductsResponse {
+export interface ProductResponse {
   productCollection: ItemsReponse;
 };

@@ -1,8 +1,8 @@
 import { ChangeEvent, useEffect, useState } from 'react';
 import { Checkbox } from '@components/UI/atoms/Checkbox';
 import { FilterWrapper } from './ProductsFilter.styled';
-import { CheckboxProps } from '@components/UI/atoms/Checkbox/Checkbox.interfaces';
 import { ProductsFilterProps } from './ProductsFilter.interfaces';
+import { ProductTypeDataResponse } from 'graphql/interfaces/productType.interfaces';
 
 export const ProductsFilter = ({ filters, onFiltered, initialSelectedFilters }: ProductsFilterProps) => {
   const [selectedFilters, setSelectedFilters] = useState(initialSelectedFilters);
@@ -19,13 +19,13 @@ export const ProductsFilter = ({ filters, onFiltered, initialSelectedFilters }:
   return (
     <FilterWrapper>
       {
-        filters.map(({id, name, initiallyChecked, label}: CheckboxProps) => (
+        filters.map(({name, slug, initiallySelected}: ProductTypeDataResponse) => (
           <Checkbox
-            id={id}
-            key={id}
-            name={name}
-            initiallyChecked={initiallyChecked}
-            label={label}
+            id={slug}
+            key={slug}
+            name={slug}
+            initiallyChecked={initiallySelected}
+            label={name}
             onChange={handleOnChange}
           />
         ))

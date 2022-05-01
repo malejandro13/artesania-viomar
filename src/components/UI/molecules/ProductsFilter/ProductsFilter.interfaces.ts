@@ -1,7 +1,7 @@
-import { CheckboxProps } from '@components/UI/atoms/Checkbox/Checkbox.interfaces';
+import { ProductTypeDataResponse } from 'graphql/interfaces/productType.interfaces';
 
 export interface ProductsFilterProps {
-  filters: CheckboxProps[];
+  filters: ProductTypeDataResponse[];
   onFiltered: Function,
   initialSelectedFilters: object
 };

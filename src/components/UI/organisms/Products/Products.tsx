@@ -1,14 +1,13 @@
 import { useQuery } from '@apollo/client';
 import { ProductCard } from '@components/UI/molecules/ProductCard';
 import { Item, List } from './Products.styled';
-import { getProductsByType } from 'graphql/queries/products';
-import { ProductsResponse } from 'graphql/interfaces/products.interfaces';
+import { getProductsByType } from 'graphql/queries/product';
+import { ProductResponse } from 'graphql/interfaces/product.interfaces';
 import { ProductsProps } from './Products.interfaces';
 
 export const Products = ({
   productFilter,
 }: ProductsProps) => {
-
   const { loading, error, data } = useQuery(getProductsByType, {
     variables: {
       productFilter,
@@ -24,7 +23,7 @@ export const Products = ({
     return null;
   }
   
-  const { productCollection: { items: products } }: ProductsResponse = data;
+  const { productCollection: { items: products } }: ProductResponse = data;
 
   return (
     <List>
