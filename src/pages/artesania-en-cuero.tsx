@@ -7,9 +7,10 @@ import { Products } from '@components/UI/organisms/Products';
 import { ProductsFilter } from '@components/UI/molecules/ProductsFilter';
 import { ClientOnly } from 'graphql/components/ClientOnly';
 import client from '../../apollo-client';
-import { getProductTypes } from 'graphql/queries/productType';
+import { getProductTypesByCategory } from 'graphql/queries/productType';
 import { LeatherPageProps } from './pages.interfaces';
-import { ProductTypeDataResponse } from 'graphql/interfaces/productType.interfaces';
+import { ProductTypeDataResponse } from 'graphql/interfaces/productType';
+import { ThumbNames } from '@constants/thumb';
 
 const getProductFilter = (filters: object) => {
   const productTypeFilter : object[] = [];
@@ -61,7 +62,11 @@ const Leather = ({ productTypes }: LeatherPageProps) => {
 
 export async function getStaticProps() {
   const { data } = await client.query({
-    query: getProductTypes,
+    query: getProductTypesByCategory,
+    variables: {
+      productFilter: {category: ThumbNames.leather},
+      productTypeOrder: 'slug_ASC',
+    },
   });
 
   return {

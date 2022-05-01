@@ -11,6 +11,7 @@ export const Section =styled.section<SectionProps>`
   overflow-x: hidden;
   padding: 20px;
   padding-bottom: 120px;
+  padding-top: 100px;
   background: #bb9a83;
   background: linear-gradient(to right, #7f695c, #bb9a83);
   overflow: hidden;

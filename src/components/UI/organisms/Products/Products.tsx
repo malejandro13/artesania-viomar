@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import { ProductCard } from '@components/UI/molecules/ProductCard';
 import { Item, List } from './Products.styled';
 import { getProductsByType } from 'graphql/queries/product';
-import { ProductResponse } from 'graphql/interfaces/product.interfaces';
+import { ProductResponse } from 'graphql/interfaces/product';
 import { ProductsProps } from './Products.interfaces';
 
 export const Products = ({
@@ -11,6 +11,7 @@ export const Products = ({
   const { loading, error, data } = useQuery(getProductsByType, {
     variables: {
       productFilter,
+      productOrder: 'productType_ASC',
     },
   });
   

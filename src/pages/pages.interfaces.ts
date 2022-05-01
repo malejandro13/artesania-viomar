@@ -1,4 +1,4 @@
-import { ProductTypeDataResponse } from "graphql/interfaces/productType.interfaces";
+import { ProductTypeDataResponse } from "graphql/interfaces/productType";
 
 export enum AlignItems {
   start = 'start',

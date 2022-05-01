@@ -1,8 +1,14 @@
 import { gql } from "@apollo/client";
 
 export const getProductsByType = gql`
-  query getProductsByType($productFilter: ProductFilter) {
-    productCollection(where: $productFilter) {
+  query getProductsByType(
+    $productOrder: ProductOrder,
+    $productFilter: ProductFilter
+  ) {
+    productCollection(
+      order: [$productOrder],
+      where: $productFilter
+    ) {
       items {
         title,
         productType,

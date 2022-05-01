@@ -1,7 +1,8 @@
 export interface ProductTypeDataResponse {
-  name: string,
-  slug: string,
-  initiallySelected: boolean,
+  name: string;
+  slug: string;
+  initiallySelected: boolean;
+  category: string;
 };
 
 interface ItemsReponse {
