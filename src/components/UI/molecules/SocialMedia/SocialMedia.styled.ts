@@ -14,7 +14,7 @@ export const List = styled.ul`
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     background-color: initial;
     right: 5px;
   }
@@ -25,5 +25,4 @@ export const Item = styled.li`
   display: inline-block;
   margin: 5px 0;
   transform: scale(0.6);
-  filter: invert(1);
 `;

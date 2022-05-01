@@ -8,7 +8,7 @@ export const Main = styled.main`
   align-items: center;
   flex-direction: column;
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     margin-top: 0;
     flex-direction: row;
     padding: 0;
@@ -19,7 +19,7 @@ export const TextBox = styled.div`
   position: relative;
   width: 100%;
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     max-width: 630px; 
   }
 `;
@@ -49,7 +49,7 @@ export const Anchor = styled.a`
     background: linear-gradient(to right,#d39f79,#9e7151);
   }
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     padding: 1.5rem 0.3rem;
     
     &::after {
@@ -66,7 +66,7 @@ export const ImageBox = styled.div`
   z-index: 1;
   margin: 7rem 0 2rem 0;
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     width: 600px;
     justify-content: flex-end;
     margin-top: 1.25rem;  
@@ -76,7 +76,7 @@ export const ImageBox = styled.div`
 export const Image = styled.img`
   max-width: 250px;
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     max-width: 400px;
   }
 `;

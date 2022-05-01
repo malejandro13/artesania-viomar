@@ -41,7 +41,7 @@ export const Item = styled.li`
     border: 2px solid rgba(255, 255, 255, 1);;
   }
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     margin: 0 10px;
     height: 80px;
 
@@ -63,7 +63,7 @@ export const Button = styled.button`
 export const Image = styled.img`
   max-width: 50px;
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     max-width: 80px;
   }
 `;

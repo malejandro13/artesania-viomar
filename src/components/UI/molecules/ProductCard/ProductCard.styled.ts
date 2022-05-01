@@ -8,8 +8,15 @@ export const Card = styled.div`
   position: relative;
   width: 320px;
   height: 450px;
-  border-radius: 20px;
   overflow: hidden;
+
+  @media (min-width: ${({theme: { breakpoints: { medium: { value, unit }}}}) => `${value}${unit}`}) {
+    width: 290px;
+  }
+
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
+    width: 295px;
+  }
 
   &::before {
     content: '';
@@ -34,7 +41,7 @@ export const Card = styled.div`
     position: absolute;
     top: 65%;
     left: -5%;
-    font-size: 5em;
+    font-size: 4.6em;
     font-weight: 800;
     font-style: italic;
     color: rgba(0,0,0,0.04);

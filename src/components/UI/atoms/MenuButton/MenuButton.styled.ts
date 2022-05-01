@@ -37,7 +37,7 @@ export const Button = styled.button<ButtonProps>`
     }
   `}
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     display: none;
   }
 `

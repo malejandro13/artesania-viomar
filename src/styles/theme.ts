@@ -4,7 +4,14 @@ const colors = {
 }
 
 const breakpoints = {
-  medium: '990px',
+  medium: {
+    value: 600,
+    unit: 'px',
+  },
+  large: {
+    value: 1024,
+    unit: 'px',
+  },
 }
 
 export const theme = {

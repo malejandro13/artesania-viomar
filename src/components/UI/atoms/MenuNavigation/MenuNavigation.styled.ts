@@ -18,7 +18,7 @@ export const List = styled.ul<ListProps>`
     flex-direction: column;
   `}
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -46,7 +46,7 @@ export const Anchor = styled.a`
     color: #333;
   }
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     margin-left: 10px;
     font-size: 1em;
   }

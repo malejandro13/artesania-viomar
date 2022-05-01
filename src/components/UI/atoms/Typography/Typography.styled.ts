@@ -8,7 +8,7 @@ export const Text = styled.p`
     line-height: 1.2em;
     font-weight: 700;
 
-    @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+    @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
       font-size: 4rem;
     }    
   }
