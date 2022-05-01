@@ -8,7 +8,7 @@ import { MAIN_CONTENT_LIST } from '@constants/mainContent';
 import { MainContentProps } from '@components/UI/organisms/MainContent/MainContent.interfaces';
 import { SocialMedia } from '@components/UI/molecules/SocialMedia';
 import { SOCIAL_MEDIA_LIST } from '@constants/socialMedia';
-import { Section } from './index.styled';
+import { Section } from './pages.styled';
 
 const Home: NextPage = () => {
   const [mainContentInfo, setMainContentInfo] = useState<MainContentProps>(MAIN_CONTENT_LIST[ThumbNames.viomar])
@@ -28,6 +28,6 @@ const Home: NextPage = () => {
       <SocialMedia socialMediaList={SOCIAL_MEDIA_LIST} />
     </Section>
   );
-}
+};
 
-export default Home
+export default Home;

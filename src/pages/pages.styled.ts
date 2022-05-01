@@ -1,12 +1,13 @@
 import styled from 'styled-components';
+import { AlignItems, SectionProps } from './pages.interfaces';
 
-export const Section =styled.section`
+export const Section =styled.section<SectionProps>`
   position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: ${({ alignItems }) => alignItems || AlignItems.center};
   overflow-x: hidden;
   padding: 20px;
   padding-bottom: 120px;

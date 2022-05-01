@@ -1,5 +1,8 @@
-import { ProductCardProps } from "@components/UI/molecules/ProductCard/ProductCard.interfaces";
+interface ProductFilter {
+  productType?: string;
+  OR?: ProductFilter[];
+};
 
 export interface ProductsProps {
-  products: ProductCardProps[];
+  productFilter: ProductFilter;
 }
