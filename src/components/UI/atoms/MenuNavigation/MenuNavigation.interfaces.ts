@@ -4,6 +4,7 @@ export interface MenuObject {
 }
 
 export interface MenuNavigationProps {
+  currentPage: string;
   menuList: MenuObject[];
   open?: boolean;
 }

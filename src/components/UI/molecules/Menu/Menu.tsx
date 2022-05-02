@@ -8,12 +8,13 @@ import { useRouter } from "next/router";
 export const Menu = () => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentPage] = useState(router.asPath);
+  const [currentPage, setCurrenPage] = useState(router.asPath);
 
   const handleOnClickButtonMenu = () => setIsMenuOpen(!isMenuOpen);
 
   useEffect(() => {
     if(currentPage !== router.asPath) {
+      setCurrenPage(router.asPath);
       setIsMenuOpen(false);
     };
   }, [router.asPath]);
@@ -21,7 +22,7 @@ export const Menu = () => {
   return (
     <MenuWrapper>
      <MenuButton open={isMenuOpen} onClick={handleOnClickButtonMenu} />
-     <MenuNavigation menuList={MENU_LIST} open={isMenuOpen} />
+     <MenuNavigation currentPage={currentPage} menuList={MENU_LIST} open={isMenuOpen} />
     </MenuWrapper>
-  )
+  );
 };
