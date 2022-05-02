@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, .05);
   border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
   backdrop-filter: blur(5px);
   position: relative;
   width: 300px;
@@ -19,7 +19,7 @@ export const Card = styled.div`
     height: 100%;
     background: #7f695c;
     clip-path: circle(150px at 80% 20%);
-    transition: 0.5s ease-in-out;
+    transition: .5s ease-in-out;
   }
 
   &:hover::before,
@@ -36,7 +36,7 @@ export const Card = styled.div`
     font-size: 4.6em;
     font-weight: 800;
     font-style: italic;
-    color: rgba(0,0,0,0.04);
+    color: rgba(0,0,0,.04);
   }
 
   &:focus-visible {

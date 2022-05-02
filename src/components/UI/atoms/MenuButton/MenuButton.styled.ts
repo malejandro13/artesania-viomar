@@ -16,7 +16,7 @@ export const Button = styled.button<ButtonProps>`
     border-radius: 3px;
     z-index: 3;
     transform-origin: 4px 0px;
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+    transition: transform .5s cubic-bezier(.77,.2,.05,1.0), background .5s cubic-bezier(.77,.2,.05,1.0), opacity .55s ease;
   }
 
   ${({ open }) => open && `
@@ -28,7 +28,7 @@ export const Button = styled.button<ButtonProps>`
     & span:nth-child(2)
     {
       opacity: 0;
-      transform: rotate(0deg) scale(0.2, 0.2);
+      transform: rotate(0deg) scale(.2, .2);
     }
 
     & span:last-child

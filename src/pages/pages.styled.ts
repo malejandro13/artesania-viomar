@@ -27,7 +27,7 @@ export const Section =styled.section<SectionProps>`
       width: 700px;
       height: 700px;
       border-radius: 50%;
-      border: 14rem solid rgba(0,0,0,0.05);
+      border: 14rem solid rgba(0, 0, 0, .05);
       
     }
   }
@@ -37,6 +37,7 @@ export const ProductContent = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  z-index: 1;
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     flex-direction: row;

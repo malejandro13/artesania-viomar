@@ -45,7 +45,7 @@ export const Text = styled.p`
   }
   
   &.typography--variant-subheading2 {
-    font-size: 0.875rem;
+    font-size: .875rem;
     font-weight: 500;
   }
 
@@ -55,6 +55,6 @@ export const Text = styled.p`
   }
   
   &.typography--variant-body2 {
-    font-size: 0.875rem;
+    font-size: .875rem;
   }
 `;

@@ -8,7 +8,7 @@ export const List = styled.ul`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, .2);
   right: 0;
   width: 50px;
   border-top-left-radius: 5px;
@@ -24,5 +24,5 @@ export const Item = styled.li`
   list-style: none;
   display: inline-block;
   margin: 5px 0;
-  transform: scale(0.6);
+  transform: scale(.6);
 `;

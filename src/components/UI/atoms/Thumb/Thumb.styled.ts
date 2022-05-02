@@ -11,10 +11,10 @@ export const List = styled.ul`
 export const Item = styled.li`
   list-style: none;
   display: inline-block;
-  transition: 0.5s;
-  background-color: rgba(255, 255, 255, 0.25);
+  transition: .5s;
+  background-color: rgba(255, 255, 255, .25);
   padding: 5px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, .25);
   border-radius: 10px;
   margin: 0 3px;
   height: 50px;
@@ -27,7 +27,7 @@ export const Item = styled.li`
     font-size: 5em;
     content: attr(data-text);
     white-space: nowrap;
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, .3);
     opacity: 0;
     font-weight: 700;
     pointer-events: none;

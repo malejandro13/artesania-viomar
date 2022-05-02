@@ -36,21 +36,21 @@ export const Anchor = styled.a`
   border-start-end-radius: 60px;
   width: 18rem;
   background: linear-gradient(to right,#bb9a83,#7f695c);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
   text-align: end;
 
   &::after {
     content: '>';
     font-size: 1.5rem;
-    padding: 0.6rem 1.2rem;
+    padding: .6rem 1.2rem;
     background: #b99881;
     border-radius: 50%;
-    margin: 0 0.5rem;
+    margin: 0 .5rem;
     background: linear-gradient(to right,#d39f79,#9e7151);
   }
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
-    padding: 1.5rem 0.3rem;
+    padding: 1.5rem .3rem;
     
     &::after {
       margin: 0 1rem;

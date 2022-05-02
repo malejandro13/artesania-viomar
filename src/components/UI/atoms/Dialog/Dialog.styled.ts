@@ -13,9 +13,9 @@ export const DialogWrapper = styled.div<DialogWrapperProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(85, 63, 49, 0.4);
+  background: rgba(85, 63, 49, .4);
   border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
   backdrop-filter: blur(5px);
   transition: all .4s;
   z-index: 20;
@@ -28,9 +28,9 @@ export const DialogWrapper = styled.div<DialogWrapperProps>`
 
 export const DialogContent = styled.div`
   position: relative;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, .3);
   border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
   backdrop-filter: blur(5px);
   padding: 2rem 1rem 5rem 1rem;
   margin: .5rem;
