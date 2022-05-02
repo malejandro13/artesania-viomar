@@ -16,8 +16,8 @@ export const Section =styled.section<SectionProps>`
   background: linear-gradient(to right, #7f695c, #bb9a83);
   overflow: hidden;
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
-    padding: 70px;
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
+    padding: 70px 50px;
 
     &::before {
       content: '';
@@ -31,4 +31,25 @@ export const Section =styled.section<SectionProps>`
       
     }
   }
+`;
+
+export const ProductContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
+    flex-direction: row;
+    margin-top: 1rem;
+  }
+`;
+
+export const ProductsFilterWrapper = styled.div`
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
+    min-width: 270px;
+  }
+`;
+
+export const ProductsWrapper = styled.div`
+  width: 100%;
 `;

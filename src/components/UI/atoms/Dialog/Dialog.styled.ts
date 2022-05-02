@@ -32,7 +32,7 @@ export const DialogContent = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
-  padding: 5rem 1rem;
+  padding: 2rem 1rem 5rem 1rem;
   margin: .5rem;
   width: 500px;
   max-width: 90%;

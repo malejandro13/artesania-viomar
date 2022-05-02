@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Header } from '@components/UI/organisms/Header';
 import { SocialMedia } from '@components/UI/molecules/SocialMedia';
 import { SOCIAL_MEDIA_LIST } from '@constants/socialMedia';
-import { Section } from './pages.styled';
+import { ProductContent, ProductsFilterWrapper, ProductsWrapper, Section } from './pages.styled';
 import { Products } from '@components/UI/organisms/Products';
 import { ProductsFilter } from '@components/UI/molecules/ProductsFilter';
 import { ClientOnly } from 'graphql/components/ClientOnly';
@@ -41,20 +41,20 @@ const Leather = ({ productTypes }: LeatherPageProps) => {
   return (
     <Section alignItems="start">
       <Header/>
-      <div style={{display: 'flex', width: '100%'}}>
-        <div style={{width: '30%'}}>
-        <ProductsFilter
-          filters={productTypes}
-          initialSelectedFilters={initialSelectedFilters}
-          onFiltered={handleOnFiltered} 
-        />
-        </div>
-        <div style={{width: '70%'}}>
+      <ProductContent>
+        <ProductsFilterWrapper>
+          <ProductsFilter
+            filters={productTypes}
+            initialSelectedFilters={initialSelectedFilters}
+            onFiltered={handleOnFiltered} 
+          />
+        </ProductsFilterWrapper>
+        <ProductsWrapper>
           <ClientOnly>
             <Products productFilter={productFilter} />
           </ClientOnly>
-        </div>
-      </div>
+        </ProductsWrapper>
+      </ProductContent>
       <SocialMedia socialMediaList={SOCIAL_MEDIA_LIST} />
     </Section>
   );

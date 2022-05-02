@@ -6,17 +6,9 @@ export const Card = styled.div`
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   position: relative;
-  width: 320px;
+  width: 300px;
   height: 450px;
   overflow: hidden;
-
-  @media (min-width: ${({theme: { breakpoints: { medium: { value, unit }}}}) => `${value}${unit}`}) {
-    width: 290px;
-  }
-
-  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
-    width: 295px;
-  }
 
   &::before {
     content: '';
@@ -50,6 +42,22 @@ export const Card = styled.div`
   &:focus-visible {
     outline-offset: 1px;
     -webkit-focus-ring-color auto 1px;
+  }
+
+  @media (min-width: ${({theme: { breakpoints: { medium: { value, unit }}}}) => `${value}${unit}`}) {
+    width: 260px;
+    &::after {
+      left: -4%;
+      font-size: 4em;
+    }
+  }
+
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
+    width: 295px;
+    &::after {
+      left: -5%;
+      font-size: 4.6em;
+    }
   }
 `;
 
