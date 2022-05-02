@@ -13,4 +13,5 @@ export interface SectionProps {
 
 export interface LeatherPageProps {
   productTypes: ProductTypeDataResponse[];
+  category: string;
 };

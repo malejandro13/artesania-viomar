@@ -6,7 +6,7 @@ export const List = styled.ul<ListProps>`
   background: #bb9a83;
   background: linear-gradient(to right, #7f695c, #bb9a83);
 
-  ${({ isMenuOpen }) => isMenuOpen && `
+  ${({ open }) => open && `
     position: fixed;
     top: 0;
     left: 0;

@@ -1,5 +1,6 @@
 interface ProductFilter {
   productType?: string;
+  AND?: ProductFilter[];
   OR?: ProductFilter[];
 };
 

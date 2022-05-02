@@ -1,10 +1,11 @@
-import { ThumbNames } from "./thumb";
+import { PagePaths } from './menu';
+import { ThumbNames } from './thumb';
 
 export const MAIN_CONTENT_LIST = {
 	[ThumbNames.viomar]: {
     title: 'Artesanía Viomar',
-    paragraph: 'Desde Nueva Imperial dedicados al diseño y confección de Tejidos a Telar, Palillo y Crochet. Asimismo de Curtido Artesanal de Cuero, donde podrá solicitar productos exclusivamente diseñados para usted, adaptados a sus gustos.',
-    ctaUrl: '/artesania-en-cuero',
+    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nulla illum sequi dignissimos iusto quibusdam laborum in, labore exercitationem a ratione repellat consequuntur numquam, voluptate sit culpa nemo doloremque. Aperiam.',
+    ctaUrl: PagePaths.home,
     ctaText: 'Ver más',
     ctaAriaLabel: 'Ver productos de artesanía en cuero',
     imageUrl: '/assets/images/home/viomar.png',
@@ -12,8 +13,8 @@ export const MAIN_CONTENT_LIST = {
 	},
   [ThumbNames.leather]: {
     title: 'Artesanía en cuero',
-    paragraph: 'En artesaía Viomar realizamos trabajos en cuero curtidos artesanal e industrial.',
-    ctaUrl: '/artesania-en-cuero',
+    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nulla illum sequi dignissimos iusto quibusdam laborum in, labore exercitationem a ratione repellat consequuntur numquam, voluptate sit culpa nemo doloremque. Aperiam.',
+    ctaUrl: PagePaths.leather,
     ctaText: 'Ver más',
     ctaAriaLabel: 'Ver productos de artesanía en cuero',
     imageUrl: '/assets/images/home/cuero.png',
@@ -21,20 +22,11 @@ export const MAIN_CONTENT_LIST = {
   },
   [ThumbNames.wool]: {
     title: 'Artesanía en Lana',
-    paragraph: 'En artesanía Viomar realizamos trabajos en lana de oveja, industrial e hilos.',
-    ctaUrl: '/artesania-en-lana',
+    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nulla illum sequi dignissimos iusto quibusdam laborum in, labore exercitationem a ratione repellat consequuntur numquam, voluptate sit culpa nemo doloremque. Aperiam.',
+    ctaUrl: PagePaths.wool,
     ctaText: 'Ver más',
     ctaAriaLabel: 'Ver productos de artesanía en lana',
     imageUrl: '/assets/images/home/lana.png',
     imageAltText: 'Producto de artesanía en lana',
-  },
-  [ThumbNames.news]: {
-    title: 'Informaciones',
-    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore sapiente at quibusdam quod deserunt illum omnis culpa nam rem? Qui molestiae ipsum perspiciatis voluptas labore blanditiis totam? Perspiciatis, atque rem!',
-    ctaUrl: '/informaciones',
-    ctaText: 'Ver más',
-    ctaAriaLabel: 'Ver informaciones sobre artesanía Viomar',
-    imageUrl: '/assets/images/home/viomar.png',
-    imageAltText: 'Artesanía Viomar',
   }
 };

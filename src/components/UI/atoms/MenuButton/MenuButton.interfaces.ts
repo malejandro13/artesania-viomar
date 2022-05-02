@@ -1,7 +1,10 @@
+import { MouseEventHandler } from 'react';
+
 export interface ButtonProps {
-  isMenuOpen?: boolean;
+  open?: boolean;
 }
 
 export interface MenuButtonProps {
-  onOpenMenu?: Function;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  open: boolean;
 }

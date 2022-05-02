@@ -1,28 +1,34 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Header } from '@components/UI/organisms/Header';
 import { SocialMedia } from '@components/UI/molecules/SocialMedia';
 import { SOCIAL_MEDIA_LIST } from '@constants/socialMedia';
-import { ProductContent, ProductsFilterWrapper, ProductsWrapper, Section } from './pages.styled';
+import { ProductContent, ProductsFilterWrapper, ProductsWrapper, Section } from '../pages.styled';
 import { Products } from '@components/UI/organisms/Products';
 import { ProductsFilter } from '@components/UI/molecules/ProductsFilter';
 import { ClientOnly } from 'graphql/components/ClientOnly';
-import client from '../../apollo-client';
+import client from '../../../apollo-client';
 import { getProductTypesByCategory } from 'graphql/queries/productType';
-import { LeatherPageProps } from './pages.interfaces';
+import { LeatherPageProps } from '../pages.interfaces';
 import { ProductTypeDataResponse } from 'graphql/interfaces/productType';
-import { ThumbNames } from '@constants/thumb';
+import { getCategories } from 'graphql/queries/category';
+import { CategoryDataResponse } from 'graphql/interfaces/category';
 
-const getProductFilter = (filters: object) => {
+const getProductFilter = (filters: object, category: string) => {
   const productTypeFilter : object[] = [];
   Object.entries(filters).forEach(([productType, checked]) => {
     checked && productTypeFilter.push({ productType: productType });
   });
   return {
-    OR: productTypeFilter,
-  };
-}
+  	AND: [
+      {
+        OR: productTypeFilter
+    	},
+      {category}
+    ]
+	}
+};
 
-const Leather = ({ productTypes }: LeatherPageProps) => {
+const Leather = ({ productTypes, category }: LeatherPageProps) => {
   const initialSelectedFilters = useMemo(() => {
     const initialSelectedFilters = {};
     productTypes.forEach(({ slug, initiallySelected }: ProductTypeDataResponse) => {
@@ -30,13 +36,17 @@ const Leather = ({ productTypes }: LeatherPageProps) => {
     });
 
     return initialSelectedFilters;
-  }, [productTypes]);
+  }, [productTypes, category]);
 
-  const [productFilter, setProductFilter] = useState(getProductFilter(initialSelectedFilters));
+  const [productFilter, setProductFilter] = useState(getProductFilter(initialSelectedFilters, category));
 
   const handleOnFiltered = (filtered: object) => {
-    setProductFilter(getProductFilter(filtered))
+    setProductFilter(getProductFilter(filtered, category))
   };
+
+  useEffect(() => {
+    setProductFilter(getProductFilter(initialSelectedFilters, category))
+  }, [productTypes, category]);
 
   return (
     <Section alignItems="start">
@@ -60,11 +70,25 @@ const Leather = ({ productTypes }: LeatherPageProps) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
+  const { data } = await client.query({
+    query: getCategories,
+  });
+
+  const categories = data.categoryCollection.items;
+
+  const paths = categories.map(({slug}: CategoryDataResponse) => ({
+    params: { category: slug },
+  }));
+
+  return { paths, fallback: false };
+};
+
+export async function getStaticProps({ params: { category } }: { params: { category: string } }) {
   const { data } = await client.query({
     query: getProductTypesByCategory,
     variables: {
-      productFilter: {category: ThumbNames.leather},
+      productTypeFilter: {category},
       productTypeOrder: 'slug_ASC',
     },
   });
@@ -72,8 +96,9 @@ export async function getStaticProps() {
   return {
     props: {
       productTypes: data.productTypeCollection.items,
+      category,
     },
- };
-}
+  };
+};
 
 export default Leather;

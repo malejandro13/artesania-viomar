@@ -5,9 +5,9 @@ export interface MenuObject {
 
 export interface MenuNavigationProps {
   menuList: MenuObject[];
-  isMenuOpen?: boolean;
+  open?: boolean;
 }
 
 export interface ListProps {
-  isMenuOpen?: boolean;
+  open?: boolean;
 }
