@@ -3,11 +3,12 @@ import { Checkbox } from '@components/UI/atoms/Checkbox';
 import { ButtonCloseDialog, ButtonOpenFilter, FilterTitle, FilterWrapper } from './ProductsFilter.styled';
 import { ProductsFilterProps } from './ProductsFilter.interfaces';
 import { ProductTypeDataResponse } from 'graphql/interfaces/productType';
-import { useWindowSize, Size } from 'hooks/useWindowSize';
 import { theme } from 'styles/theme';
 import { Dialog } from '@components/UI/atoms/Dialog';
 import { Filters } from '@components/icons/Filters';
 import { Typography } from '@components/UI/atoms/Typography';
+import { useWindowSize } from 'hooks/useWindowSize';
+import { Size } from 'hooks/useWindowSize/useWindowSize.interfaces';
 
 export const ProductsFilter = ({ filters, onFiltered, initialSelectedFilters }: ProductsFilterProps) => {
   const [selectedFilters, setSelectedFilters] = useState(initialSelectedFilters);

@@ -22,7 +22,7 @@ export const Input = styled.input`
 `;
 
 export const Label = styled.label`
-  padding: 12px 30px;
+  padding: 12px 16px;
   width: 100%;
   display: block;
   text-align: left;
@@ -59,7 +59,7 @@ export const Label = styled.label`
     border-radius: 50%;
     z-index: 2;
     position: absolute;
-    right: 30px;
+    right: 16px;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
