@@ -6,7 +6,7 @@ export const FilterWrapper = styled.div`
   box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
   backdrop-filter: blur(5px);
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem 1rem 1rem 0;
 `;
 
 export const ButtonCloseDialog = styled.button`
