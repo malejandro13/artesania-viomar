@@ -4,7 +4,7 @@ export interface DialogProps {
   children: JSX.Element[] | JSX.Element;
   fromLightBox?: boolean;
   open: boolean;
-  onClose: MouseEventHandler<HTMLButtonElement>;
+  onClose: Function;
 };
 
 export interface DialogWrapperProps {

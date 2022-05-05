@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { DialogWrapperProps, DialogContentProps } from './Dialog.interfaces';
 
-export const DialogWrapper = styled.div<DialogWrapperProps>`
+export const DialogWrapper = styled.dialog<DialogWrapperProps>`
   visibility: hidden;
   opacity: 0;
   position: fixed;
@@ -10,6 +10,8 @@ export const DialogWrapper = styled.div<DialogWrapperProps>`
   bottom: 0;
   left: 0;
   height: 100vh;
+  width: 100%;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
