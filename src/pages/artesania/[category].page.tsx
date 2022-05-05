@@ -5,30 +5,15 @@ import { SOCIAL_MEDIA_LIST } from '@constants/socialMedia';
 import { ProductContent, ProductsFilterWrapper, ProductsWrapper, Section } from '../pages.styled';
 import { Products } from '@components/UI/organisms/Products';
 import { ProductsFilter } from '@components/UI/molecules/ProductsFilter';
-import { ClientOnly } from 'graphql/components/ClientOnly';
 import client from '../../../apollo-client';
-import { getProductTypesByCategory } from 'graphql/queries/productType';
+import { getProductTypes } from 'graphql/queries/productType';
 import { LeatherPageProps } from '../pages.interfaces';
 import { ProductTypeDataResponse } from 'graphql/interfaces/productType';
 import { getCategories } from 'graphql/queries/category';
 import { CategoryDataResponse } from 'graphql/interfaces/category';
+import { getProducts } from 'graphql/queries/product';
 
-const getProductFilter = (filters: object, category: string) => {
-  const productTypeFilter : object[] = [];
-  Object.entries(filters).forEach(([productType, checked]) => {
-    checked && productTypeFilter.push({ productType: productType });
-  });
-  return {
-  	AND: [
-      {
-        OR: productTypeFilter
-    	},
-      {category}
-    ]
-	}
-};
-
-const Leather = ({ productTypes, category }: LeatherPageProps) => {
+const Leather = ({ products: productsResponse, productTypes, category }: LeatherPageProps) => {
   const initialSelectedFilters = useMemo(() => {
     const initialSelectedFilters = {};
     productTypes.forEach(({ slug, initiallySelected }: ProductTypeDataResponse) => {
@@ -38,14 +23,19 @@ const Leather = ({ productTypes, category }: LeatherPageProps) => {
     return initialSelectedFilters;
   }, [productTypes, category]);
 
-  const [productFilter, setProductFilter] = useState(getProductFilter(initialSelectedFilters, category));
+  const [productFilter, setProductFilter] = useState(initialSelectedFilters);
+
+  const products = useMemo(() =>
+    productsResponse.filter((product) =>
+      productFilter[product.productType as keyof object]
+  ), [productFilter]);
 
   const handleOnFiltered = (filtered: object) => {
-    setProductFilter(getProductFilter(filtered, category))
+    setProductFilter(filtered)
   };
 
   useEffect(() => {
-    setProductFilter(getProductFilter(initialSelectedFilters, category))
+    setProductFilter(initialSelectedFilters)
   }, [productTypes, category]);
 
   return (
@@ -60,9 +50,7 @@ const Leather = ({ productTypes, category }: LeatherPageProps) => {
           />
         </ProductsFilterWrapper>
         <ProductsWrapper>
-          <ClientOnly>
-            <Products productFilter={productFilter} />
-          </ClientOnly>
+            <Products products={products} />
         </ProductsWrapper>
       </ProductContent>
       <SocialMedia socialMediaList={SOCIAL_MEDIA_LIST} />
@@ -81,21 +69,29 @@ export async function getStaticPaths() {
     params: { category: slug },
   }));
 
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 };
 
 export async function getStaticProps({ params: { category } }: { params: { category: string } }) {
-  const { data } = await client.query({
-    query: getProductTypesByCategory,
+  const { data: productType } = await client.query({
+    query: getProductTypes,
     variables: {
       productTypeFilter: {category},
       productTypeOrder: 'slug_ASC',
     },
   });
+  
+  const { data: product  } = await client.query({
+    query: getProducts,
+    variables: {
+      productFilter: {category},
+    },
+  });
 
   return {
     props: {
-      productTypes: data.productTypeCollection.items,
+      products: product.productCollection.items,
+      productTypes: productType.productTypeCollection.items,
       category,
     },
   };

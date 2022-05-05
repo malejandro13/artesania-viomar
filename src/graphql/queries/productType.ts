@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const getProductTypesByCategory = gql`
+export const getProductTypes = gql`
   query getProductTypesByCategory(
     $productTypeOrder: ProductTypeOrder,
     $productTypeFilter: ProductTypeFilter

@@ -1,4 +1,5 @@
-import { ProductTypeDataResponse } from "graphql/interfaces/productType";
+import { ProductDataResponse } from 'graphql/interfaces/product';
+import { ProductTypeDataResponse } from 'graphql/interfaces/productType';
 
 export enum AlignItems {
   start = 'start',
@@ -12,6 +13,7 @@ export interface SectionProps {
 };
 
 export interface LeatherPageProps {
+  products: ProductDataResponse[]
   productTypes: ProductTypeDataResponse[];
   category: string;
 };

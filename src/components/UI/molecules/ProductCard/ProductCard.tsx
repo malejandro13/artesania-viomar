@@ -14,7 +14,7 @@ export const ProductCard = ({
   ctaAriaLabel,
 }: ProductCardProps) => {
   const [openLightBox, setOpenLightBox] = useState(false);
-  const [showLightBox] = useState(images.length > 1)  
+  const showLightBox = !!images.length;
 
   const handleClickOpenLightBox = () => {
     setOpenLightBox(true);

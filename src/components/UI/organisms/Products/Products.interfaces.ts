@@ -1,3 +1,5 @@
+import { ProductDataResponse } from 'graphql/interfaces/product';
+
 interface ProductFilter {
   productType?: string;
   AND?: ProductFilter[];
@@ -5,5 +7,5 @@ interface ProductFilter {
 };
 
 export interface ProductsProps {
-  productFilter: ProductFilter;
+  products: ProductDataResponse[];
 }

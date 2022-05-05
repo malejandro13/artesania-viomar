@@ -69,7 +69,7 @@ export const Card = styled.div`
 export const ImageBox = styled.div`
   position: absolute;
   top: 0%;
-  transform: translateY(-25%);
+  transform: translateY(-21%);
   z-index: 2;
   width: 100%;
   height: 100%;
@@ -81,11 +81,11 @@ export const ImageBox = styled.div`
 
     ${Card}:hover & {
       top: 0%;
-      transform: translateY(-25%);
+      transform: translateY(-21%);
     }
     ${Card}:focus-within & {
       top: 0%;
-      transform: translateY(-25%);
+      transform: translateY(-21%);
     }
   }
 `;

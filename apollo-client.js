@@ -2,11 +2,11 @@ import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-  uri: process.env.NEXT_PUBLIC_API_URL,
+  uri: process.env.API_URL,
 });
 
 const authLink = setContext((_, { headers }) => {
-  const apiToken = process.env.NEXT_PUBLIC_API_KEY;
+  const apiToken = process.env.API_KEY;
   return {
     headers: {
       ...headers,
