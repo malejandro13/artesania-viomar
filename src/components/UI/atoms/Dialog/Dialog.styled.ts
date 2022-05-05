@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { DialogWrapperProps } from './Dialog.interfaces';
+import { DialogWrapperProps, DialogContentProps } from './Dialog.interfaces';
 
 export const DialogWrapper = styled.div<DialogWrapperProps>`
   visibility: hidden;
@@ -14,11 +14,14 @@ export const DialogWrapper = styled.div<DialogWrapperProps>`
   align-items: center;
   justify-content: center;
   background: rgba(85, 63, 49, .4);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
   backdrop-filter: blur(5px);
   transition: all .4s;
   z-index: 20;
+
+  ${({ fromLightBox }) => fromLightBox && `
+    background: rgba(0, 0, 0, .4);
+    backdrop-filter: blur(15px);
+  `}
   
   ${({ open }) => open && `
     visibility: visible;
@@ -26,16 +29,19 @@ export const DialogWrapper = styled.div<DialogWrapperProps>`
   `}
 `;
 
-export const DialogContent = styled.div`
+export const DialogContent = styled.div<DialogContentProps>`
   position: relative;
-  background: rgba(255, 255, 255, .3);
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
-  backdrop-filter: blur(5px);
   padding: 2rem 1rem 5rem 1rem;
   margin: .5rem;
-  width: 500px;
   max-width: 90%;
+  width: 100%;
+  ${({ fromLightBox }) => !fromLightBox && `
+    background: rgba(255, 255, 255, .3);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
+    backdrop-filter: blur(5px);
+    width: 500px;
+  `}
 `;
 
 export const DialogClose = styled.button`
@@ -47,5 +53,6 @@ export const DialogClose = styled.button`
   right: 10px;
   color: #fff;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 3rem;
+  z-index: 1;
 `;
