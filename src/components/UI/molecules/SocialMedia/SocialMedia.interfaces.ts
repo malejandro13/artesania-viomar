@@ -1,7 +1,7 @@
 export interface SocialMediaObject {
   name: string;
   link: string;
-  Icon: JSX.Element[] | JSX.Element;
+  Icon: React.ElementType;
 };
 
 export interface SocialMediaProps {
