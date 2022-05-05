@@ -18,6 +18,12 @@ export const getProductsByType = gql`
           url,
           description,
         },
+        imagesCollection {
+          items {
+            url,
+            description,
+          },
+        },
         ctaText,
         ctaLink,
         ctaAriaLabel,

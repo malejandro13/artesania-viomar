@@ -40,10 +40,8 @@ export const Products = ({
       {
         products.map((
           {
-            mainImage: { 
-              url: imageUrl,
-              description: imageAltText,
-            },
+            mainImage,
+            imagesCollection,
             title,
             ctaText,
             ctaLink,
@@ -53,8 +51,8 @@ export const Products = ({
         ) => (
           <Item key={`product-${index}`}>
             <ProductCard
-              imageUrl={imageUrl}
-              imageAltText={imageAltText}
+              mainImage={mainImage}
+              images={imagesCollection.items}
               title={title}
               ctaText={ctaText}
               ctaLink={ctaLink}

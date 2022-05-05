@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const MenuWrapper = styled.div`
-  position: fixed;
+  position: absolute;
   top: 30px;
   right: 30px;
   user-select: none;

@@ -1,8 +1,10 @@
+import { MainImageResponse } from 'graphql/interfaces/product';
+
 export interface ProductCardProps {
-  imageUrl: string;
-  imageAltText: string;
+  mainImage: MainImageResponse;
+  images: MainImageResponse[];
   title: string;
   ctaText: string;
   ctaLink: string;
   ctaAriaLabel: string;
-}
+};

@@ -1,6 +1,10 @@
-interface MainImageResponse {
+export interface MainImageResponse {
   url: string;
   description: string;
+};
+
+interface ItemsImagesReponse {
+  items: MainImageResponse[];
 };
 
 export interface ProductDataResponse {
@@ -9,6 +13,7 @@ export interface ProductDataResponse {
   category: string;
   code: string;
   mainImage: MainImageResponse;
+  imagesCollection: ItemsImagesReponse;
   ctaText: string;
   ctaLink: string;
   ctaAriaLabel: string;
