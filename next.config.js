@@ -9,6 +9,9 @@ const nextConfig = {
     'api.ts',
     'api.js',
   ],
+  images: {
+    domains: ['images.ctfassets.net'],
+  },
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
