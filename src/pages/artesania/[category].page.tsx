@@ -1,17 +1,15 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Header } from '@components/UI/organisms/Header';
-import { SocialMedia } from '@components/UI/molecules/SocialMedia';
-import { SOCIAL_MEDIA_LIST } from '@constants/socialMedia';
-import { ProductContent, ProductsFilterWrapper, ProductsWrapper, Section } from '../pages.styled';
+import { ProductContent, ProductsFilterWrapper, ProductsWrapper } from './artesania.styled';
 import { Products } from '@components/UI/organisms/Products';
 import { ProductsFilter } from '@components/UI/molecules/ProductsFilter';
 import client from '../../../apollo-client';
 import { getProductTypes } from 'graphql/queries/productType';
-import { LeatherPageProps } from '../pages.interfaces';
+import { LeatherPageProps } from './artesania.interfaces';
 import { ProductTypeDataResponse } from 'graphql/interfaces/productType';
 import { getCategories } from 'graphql/queries/category';
 import { CategoryDataResponse } from 'graphql/interfaces/category';
 import { getProducts } from 'graphql/queries/product';
+import { Layout } from '@components/UI/organisms/Layout';
 
 const Leather = ({ products: productsResponse, productTypes, category }: LeatherPageProps) => {
   const initialSelectedFilters = useMemo(() => {
@@ -39,8 +37,7 @@ const Leather = ({ products: productsResponse, productTypes, category }: Leather
   }, [productTypes, category]);
 
   return (
-    <Section alignItems="start">
-      <Header/>
+    <Layout>
       <ProductContent>
         <ProductsFilterWrapper>
           <ProductsFilter
@@ -53,8 +50,7 @@ const Leather = ({ products: productsResponse, productTypes, category }: Leather
             <Products products={products} />
         </ProductsWrapper>
       </ProductContent>
-      <SocialMedia socialMediaList={SOCIAL_MEDIA_LIST} />
-    </Section>
+    </Layout>
   );
 };
 
