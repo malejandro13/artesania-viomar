@@ -60,23 +60,20 @@ export const Anchor = styled.a`
 
 export const ImageBox = styled.div`
   position: relative;
+  display: block;
   max-width: 100%;
-  display: flex;
-  justify-content: center;
+  width: 400px;
+  margin: 4rem 0 2rem 0;
+  padding: 1rem;
   z-index: 1;
-  margin: 7rem 0 2rem 0;
+  
+  @media (min-width: ${({theme: { breakpoints: { medium: { value, unit }}}}) => `${value}${unit}`}) {
+    margin: 2rem 0 2rem 0;
+  }
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     width: 600px;
-    justify-content: flex-end;
-    margin-top: 1.25rem;  
-  }
-`;
-
-export const Image = styled.img`
-  max-width: 250px;
-
-  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
-    max-width: 400px;
+    margin-top: 1.25rem;
+    padding: 3rem;
   }
 `;

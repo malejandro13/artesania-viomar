@@ -69,11 +69,21 @@ export const Card = styled.div`
 export const ImageBox = styled.div`
   position: absolute;
   top: 0%;
-  transform: translateY(-21%);
+  transform: translateY(-20%);
   z-index: 2;
   width: 100%;
   height: 100%;
   transition: .3s;
+
+  & > span {
+    transform: translate(0%, 50%);
+    cursor: pointer;
+  }
+
+  @media (min-width: ${({theme: { breakpoints: { medium: { value, unit }}}}) => `${value}${unit}`}) {
+    top: 0%;
+    transform: translateY(-16%);
+  }
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     top: 50%;
@@ -81,23 +91,15 @@ export const ImageBox = styled.div`
 
     ${Card}:hover & {
       top: 0%;
-      transform: translateY(-21%);
+      transform: translateY(-19%);
     }
     ${Card}:focus-within & {
       top: 0%;
-      transform: translateY(-21%);
+      transform: translateY(-19%);
     }
   }
 `;
 
-export const Image = styled.img`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 240px;
-  cursor: pointer;
-`;
 
 export const ContentBox = styled.div`
   position: absolute;
@@ -157,16 +159,17 @@ export const Anchor = styled.a`
 `;
 
 export const ImagesSlide = styled.div`
+  position: relative;
   height: 70vh;
   max-height: 70vh;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 0;
+  & img {
+    pointer-events: none;
+  }
 `;
 
 export const LightBoxButton = styled.button`

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const List = styled.ul`
   position: absolute;
@@ -17,7 +17,6 @@ export const Item = styled.li`
   border: 2px solid rgba(255, 255, 255, .25);
   border-radius: 10px;
   margin: 0 3px;
-  height: 50px;
 
   &::before {
     position: absolute;
@@ -43,7 +42,6 @@ export const Item = styled.li`
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     margin: 0 10px;
-    height: 80px;
 
     &::before {
       top: -200px;
@@ -51,10 +49,12 @@ export const Item = styled.li`
       font-size: 8em;
     }
   }
-    
 `;
 
 export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  height: 100%;
   background: none;
   border: none;
   cursor: pointer;

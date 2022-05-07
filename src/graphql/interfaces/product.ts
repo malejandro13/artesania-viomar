@@ -1,6 +1,8 @@
 export interface MainImageResponse {
   url: string;
   description: string;
+  width: number;
+  height: number;
 };
 
 interface ItemsImagesReponse {

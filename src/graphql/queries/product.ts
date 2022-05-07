@@ -15,11 +15,15 @@ export const getProducts = gql`
         mainImage {
           url,
           description,
+          width,
+          height,
         },
         imagesCollection {
           items {
             url,
             description,
+            width,
+            height,
           },
         },
         ctaText,
