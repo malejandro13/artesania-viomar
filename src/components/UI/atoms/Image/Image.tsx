@@ -3,7 +3,7 @@ import NextImage, {
   ImageLoaderProps,
 } from 'next/image';
 import { ImageProps } from './Image.interfaces';
-import { calcAspectRatio } from './utils/image';
+import { calcAspectRatio, shimmer, toBase64 } from './utils/image';
 
 export const Image = ({
   width,
@@ -29,6 +29,8 @@ export const Image = ({
       width={width}
       height={height}
       loader={imageLoader}
+      placeholder="blur"
+      blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(width, height))}`}
     />
   );
 };
