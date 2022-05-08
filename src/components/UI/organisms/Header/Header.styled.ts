@@ -18,7 +18,7 @@ export const HeaderWrapper = styled.header`
 export const Logo = styled.a`
   position: relative;
   font-weight: 600;
-  color: #fff;
+  color: ${({ theme: { colors }}) => colors.white};
   text-decoration: none;
   font-size: 2em;
 `;

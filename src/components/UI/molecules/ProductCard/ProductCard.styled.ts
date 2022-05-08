@@ -129,7 +129,7 @@ export const ContentBox = styled.div`
 export const Anchor = styled.a`
   display: inline-block;
   padding: 10px 20px;
-  background: #fff;
+  background: ${({ theme: { colors }}) => colors.white};
   border-radius: 30px;
   margin-top: 10px;
   text-decoration: none;
@@ -176,7 +176,7 @@ export const LightBoxButton = styled.button`
   position: absolute;
   top: 0;
   right: 0;
-  color: #fff;
+  color: ${({ theme: { colors }}) => colors.white};
   background: rgba(255, 255, 255, .2);
   border: none;
   border-bottom-left-radius: 10px;

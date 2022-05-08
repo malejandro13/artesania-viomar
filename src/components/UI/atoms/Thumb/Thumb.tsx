@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ThumbProps, ThumbObject } from './Thumb.interfaces';
+import { ThumbProps } from './Thumb.interfaces';
 import { Button, Item, List } from './Thumb.styled';
 import { Image } from '@components/UI/atoms/Image';
 
@@ -7,8 +7,7 @@ export const Thumb = ({
   thumbs,
   onSelectedThumb = () => {}
 }: ThumbProps) => {
-  const [firstThumb] = thumbs;
-  const [selectedThumb, setSelectedThumb] = useState(firstThumb.thumbName);
+  const [selectedThumb, setSelectedThumb] = useState(thumbs[0]?.section);
 
   const handleSelectedThumb = (thumb: string) => {
     setSelectedThumb(thumb);
@@ -19,22 +18,22 @@ export const Thumb = ({
   }, [selectedThumb]);
 
   return (
-    <List>
-      {thumbs.map(({ thumbName, dataText, imageURL, imageAltText }: ThumbObject) => (
+    <List aria-label="Secciones de artesanía">
+      {thumbs.map(({ title, section, image: { url } }) => (
         <Item
-          key={`thumb-${thumbName}`}
-          data-text={dataText}
-          className={selectedThumb === thumbName ? 'active' : ''}
-          onClick={() => handleSelectedThumb(thumbName)}
+          key={`thumb-${section}`}
+          data-text={section}
+          className={selectedThumb === section ? 'active' : ''}
+          onClick={() => handleSelectedThumb(section)}
         >
           <Button>
             <Image
-              src={imageURL}
+              src={url}
               width={90}
               aspectRatio="4:3"
               fit="pad"
               layout="intrinsic"
-              alt={imageAltText} 
+              alt={title} 
             />
           </Button>
         </Item>

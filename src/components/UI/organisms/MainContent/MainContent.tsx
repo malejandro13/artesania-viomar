@@ -6,24 +6,25 @@ import { Image } from '@components/UI/atoms/Image';
 
 export const MainContent = ({
   title,
-  paragraph,
-  ctaUrl,
+  description,
+  ctaLink,
   ctaText,
   ctaAriaLabel,
-  imageUrl,
-  imageAltText,
+  image: { url, description: imageAltText }
 }: MainContentProps) => (
   <Main>
     <TextBox>
       <Typography variant="h1">{title}</Typography>
-      <Typography variant="body1">{paragraph}</Typography>
-      <Link href={ctaUrl} passHref>
+      <div role="region" aria-live="polite">
+        <Typography variant="body1">{description}</Typography>
+      </div>
+      <Link href={ctaLink} passHref>
         <Anchor aria-label={ctaAriaLabel}>{ctaText}</Anchor>
       </Link>
     </TextBox>
     <ImageBox aria-hidden="true">
       <Image
-        src={imageUrl}
+        src={url}
         width={600}
         aspectRatio="4:3"
         fit="pad"

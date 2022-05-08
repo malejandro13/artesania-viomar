@@ -37,12 +37,12 @@ export const Anchor = styled.a`
   padding: 8px 15px;
   border-radius: 40px;
   text-decoration: none;
-  color: #fff;
+  color: ${({ theme: { colors }}) => colors.white};
   font-weight: 400;
 
   &.active,
   &:hover {
-    background-color: #fff;
+    background-color: ${({ theme: { colors }}) => colors.white};
     color: #333;
   }
 

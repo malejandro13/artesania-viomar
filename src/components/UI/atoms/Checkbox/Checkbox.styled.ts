@@ -32,7 +32,7 @@ export const Label = styled.label`
   display: block;
   text-align: left;
   border-radius: 10px;
-  color: #fff;
+  color: ${({ theme: { colors }}) => colors.white};
   cursor: pointer;
   position: relative;
   z-index: 2;

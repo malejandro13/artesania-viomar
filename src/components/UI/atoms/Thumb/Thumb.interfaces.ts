@@ -1,11 +1,15 @@
-export interface ThumbObject {
-  thumbName: string;
-  dataText: string;
-  imageURL: string;
-  imageAltText: string;
+export interface Image {
+  url: string;
+  description: string;
+}
+
+export interface Thumb {
+  title: string;
+  section: string;
+  image: Image;
 };
 
 export interface ThumbProps {
-  thumbs: ThumbObject[];
+  thumbs: Thumb[];
   onSelectedThumb: Function;
 };
