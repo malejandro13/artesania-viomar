@@ -14,7 +14,7 @@ export const ButtonCloseDialog = styled.button`
   bottom: 16px;
   right: 20px;
   padding: 10px 20px;
-  background: #fff;
+  background: ${({ theme: { colors }}) => colors.white};
   border-radius: 30px;
   margin-top: 10px;
   font-weight: 600;
@@ -30,7 +30,7 @@ export const ButtonOpenFilter = styled.button`
   backdrop-filter: blur(5px);
   border: none;
   padding: 1rem;
-  color: #fff;
+  color: ${({ theme: { colors }}) => colors.white};
   font-size: 1rem;
   display: flex;
   align-items: center;

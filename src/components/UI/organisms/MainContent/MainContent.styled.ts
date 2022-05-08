@@ -28,7 +28,7 @@ export const Anchor = styled.a`
   position: absolute;
   left: -7rem;
   padding: 1rem 0rem;
-  color: #fff;
+  color: ${({ theme: { colors }}) => colors.white};
   font-weight: 500;
   letter-spacing: 1px;
   text-decoration: none;

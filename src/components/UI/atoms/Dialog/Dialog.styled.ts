@@ -53,7 +53,7 @@ export const DialogClose = styled.button`
   position: absolute;
   top: 10px;
   right: 10px;
-  color: #fff;
+  color: ${({ theme: { colors }}) => colors.white};
   text-decoration: none;
   font-size: 3rem;
   z-index: 1;

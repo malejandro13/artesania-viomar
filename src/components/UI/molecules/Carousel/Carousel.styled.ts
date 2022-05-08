@@ -27,14 +27,14 @@ export const CarouselIndicator = styled.button`
   height: .8em;
   border-radius: 50%;
   margin: 0 0.3em;
-  border: 2px solid #fff;
+  border: 2px solid ${({ theme: { colors }}) => colors.white};
   cursor: pointer;
   background: initial;
   &:hover {
-    background: #fff;
+    background: ${({ theme: { colors }}) => colors.white};
   }
   &.active {
-    background: #fff;
+    background: ${({ theme: { colors }}) => colors.white};
     cursor: default;
     width: 1em;
     height: 1em;
