@@ -8,4 +8,5 @@ interface ProductFilter {
 
 export interface ProductsProps {
   products: ProductDataResponse[];
+  category: string;
 }

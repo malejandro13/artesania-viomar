@@ -42,3 +42,7 @@ export const FilterTitle = styled.div`
   display: flex;
   align-items:center;
 `;
+
+export const Fieldset = styled.fieldset`
+  border: none;
+`;

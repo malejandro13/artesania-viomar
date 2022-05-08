@@ -5,8 +5,9 @@ import { ProductsProps } from './Products.interfaces';
 
 export const Products = ({
   products,
+  category,
 }: ProductsProps) => (
-  <List>
+  <List aria-label={`Artesanía en ${category}`}>
     {
       products.map((
         {
@@ -16,6 +17,7 @@ export const Products = ({
           ctaText,
           ctaLink,
           ctaAriaLabel,
+          ariaLabel,
         }: ProductDataResponse,
         index: number,
       ) => (
@@ -24,6 +26,7 @@ export const Products = ({
             mainImage={mainImage}
             images={imagesCollection.items}
             title={title}
+            ariaLabel={ariaLabel}
             ctaText={ctaText}
             ctaLink={ctaLink}
             ctaAriaLabel={ctaAriaLabel}

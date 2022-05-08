@@ -7,4 +7,5 @@ export interface ProductCardProps {
   ctaText: string;
   ctaLink: string;
   ctaAriaLabel: string;
+  ariaLabel: string;
 };

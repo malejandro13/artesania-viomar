@@ -47,7 +47,7 @@ const Leather = ({ products: productsResponse, productTypes, category }: Leather
           />
         </ProductsFilterWrapper>
         <ProductsWrapper>
-            <Products products={products} />
+            <Products products={products} category={category} />
         </ProductsWrapper>
       </ProductContent>
     </Layout>

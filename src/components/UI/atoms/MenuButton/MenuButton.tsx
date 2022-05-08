@@ -3,10 +3,11 @@ import { Button } from './MenuButton.styled';
 import { MenuButtonProps } from './MenuButton.interfaces'
 
 export const MenuButton = ({
+  ariaLabel,
   open,
   onClick,
 }: MenuButtonProps) => (
-  <Button open={open} onClick={onClick}>
+  <Button aria-label={ariaLabel} open={open} onClick={onClick}>
     <span />
     <span />
     <span />

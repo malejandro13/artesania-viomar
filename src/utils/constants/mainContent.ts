@@ -7,7 +7,7 @@ export const MAIN_CONTENT_LIST = {
     paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nulla illum sequi dignissimos iusto quibusdam laborum in, labore exercitationem a ratione repellat consequuntur numquam, voluptate sit culpa nemo doloremque. Aperiam.',
     ctaUrl: PagePaths.leather,
     ctaText: 'Ver más',
-    ctaAriaLabel: 'Ver productos de artesanía en cuero',
+    ctaAriaLabel: 'Comienza viendo los lindos productos de artesanía en cuero',
     imageUrl: '/assets/images/home/viomar.png',
     imageAltText: 'Artesanía Viomar',
 	},

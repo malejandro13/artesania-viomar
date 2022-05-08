@@ -1,5 +1,6 @@
 export interface MenuObject {
   label: string;
+  ariaLabel: string;
   link: string;
 }
 

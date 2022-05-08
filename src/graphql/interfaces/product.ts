@@ -19,6 +19,7 @@ export interface ProductDataResponse {
   ctaText: string;
   ctaLink: string;
   ctaAriaLabel: string;
+  ariaLabel: string;
 };
 
 interface ItemsReponse {

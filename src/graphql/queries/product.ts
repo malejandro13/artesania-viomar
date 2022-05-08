@@ -9,6 +9,7 @@ export const getProducts = gql`
     ) {
       items {
         title,
+        ariaLabel
         productType,
         category,
         code,

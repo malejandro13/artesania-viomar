@@ -23,7 +23,7 @@ export const Card = styled.div`
   }
 
   &::after {
-    content: "VIOMAR";
+    content: "VIOMAR" / "";
     position: absolute;
     top: 65%;
     left: -5%;
@@ -35,7 +35,7 @@ export const Card = styled.div`
 
   &:focus-visible {
     outline-offset: 1px;
-    -webkit-focus-ring-color auto 1px;
+    outline: -webkit-focus-ring-color auto 1px;
   }
 
   @media (min-width: ${({theme: { breakpoints: { medium: { value, unit }}}}) => `${value}${unit}`}) {

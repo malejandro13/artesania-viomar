@@ -1,6 +1,6 @@
 import { CarouselChildProps } from './CarouselChild.interfaces';
 import { CarouselItem } from './CarouselChild.styled';
 
-export const CarouselChild = ({ children }: CarouselChildProps) => (
-  <CarouselItem>{children}</CarouselItem>
+export const CarouselChild = ({ children, ariaHidden }: CarouselChildProps) => (
+  <CarouselItem aria-hidden={ariaHidden}>{children}</CarouselItem>
 );

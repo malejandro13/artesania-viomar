@@ -1,6 +1,6 @@
 import { ChangeEvent, useMemo, useState } from 'react';
 import { Checkbox } from '@components/UI/atoms/Checkbox';
-import { ButtonCloseDialog, ButtonOpenFilter, FilterTitle, FilterWrapper } from './ProductsFilter.styled';
+import { ButtonCloseDialog, ButtonOpenFilter, Fieldset, FilterTitle, FilterWrapper } from './ProductsFilter.styled';
 import { ProductsFilterProps } from './ProductsFilter.interfaces';
 import { ProductTypeDataResponse } from 'graphql/interfaces/productType';
 import { theme } from 'styles/theme';
@@ -37,31 +37,37 @@ export const ProductsFilter = ({ filters, onFiltered, initialSelectedFilters }: 
     setOpenDialog(false);
   };
 
-  const filterList = useMemo(() => filters.map(({name, slug, initiallySelected}: ProductTypeDataResponse) => (
-    <Checkbox
-      id={slug}
-      key={slug}
-      name={slug}
-      initiallyChecked={selectedFilters[slug as keyof object]}
-      label={name}
-      onChange={handleOnChange}
-    />
-  )), [filters, selectedFilters]);
+  const filterList = useMemo(() => (
+    <Fieldset aria-label="Filtrar productos">
+      {filters.map(({name, slug}: ProductTypeDataResponse) => (
+        <Checkbox
+          key={slug}
+          id={slug}
+          name={slug}
+          initiallyChecked={selectedFilters[slug as keyof object]}
+          label={name}
+          onChange={handleOnChange}
+        />
+      ))}    
+    </Fieldset>
+  ), [filters, selectedFilters]);
 
   const filterTitle = (
-    <FilterTitle>
+    <FilterTitle aria-hidden>
       <Filters width="24" height="24" />
       &nbsp;
       <Typography variant="h2">Filtrar</Typography>
     </FilterTitle>
   );
-    
 
   return (
     <>
     {isMobileScreen ? (
       <>
-      <ButtonOpenFilter onClick={handleClickOpenDialog}>
+      <ButtonOpenFilter
+        aria-label="Filtrar productos. Al hacer click en este botón, se abrirá una ventana de dialogo donde podrás filtras los productos"
+        onClick={handleClickOpenDialog}
+      >
         <Filters width="24" height="24" />
         &nbsp;
         Filtrar
@@ -70,7 +76,12 @@ export const ProductsFilter = ({ filters, onFiltered, initialSelectedFilters }: 
         <>
           {filterTitle}
           {filterList}
-          <ButtonCloseDialog key="button-dialog" onClick={handleCloseDialog}>Aplicar</ButtonCloseDialog>
+          <ButtonCloseDialog
+            aria-label="Aplicar filtros. Al hacer click en este botón, se cerrará la ventana de dialogo y podrás ver los productos filtrados"
+            onClick={handleCloseDialog}
+          >
+            Aplicar
+          </ButtonCloseDialog>
         </>
       </Dialog>
       </>

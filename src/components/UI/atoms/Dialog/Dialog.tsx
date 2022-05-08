@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { DialogProps } from './Dialog.interfaces';
 import { DialogClose, DialogContent, DialogWrapper } from './Dialog.styled';
@@ -9,6 +9,7 @@ export const Dialog = ({
   open,
   onClose,
 }: DialogProps) => {
+  const dialogElement = useRef<HTMLInputElement>(null);
 
   const closeOnEscapeKeyDown = (event: KeyboardEvent) => {
     if ((event.key) === 'Escape') {
@@ -23,13 +24,28 @@ export const Dialog = ({
     };
   }, []);
 
+  useEffect(() => {
+    dialogElement?.current?.focus();
+  }, [open]);
+
   if(!open) {
-    return null
+    return null;
   }
+
   return ReactDOM.createPortal(
-    <DialogWrapper open={open} fromLightBox={fromLightBox} >
+    <DialogWrapper
+      ref={dialogElement}
+      open={open}
+      fromLightBox={fromLightBox}
+      tabIndex={-1}
+    >
       <DialogContent fromLightBox={fromLightBox}>
-        <DialogClose onClick={() => onClose()}>&times;</DialogClose>
+        <DialogClose
+          aria-label="Cerrar, al hacer click en este botón se cerrará la ventana de dialogo"
+          onClick={() => onClose()}
+        >
+          &times;
+        </DialogClose>
         {children}
       </DialogContent>
     </DialogWrapper>,

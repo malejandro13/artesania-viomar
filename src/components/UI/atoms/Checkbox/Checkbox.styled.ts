@@ -6,6 +6,11 @@ export const InputGroup = styled.div`
   margin: 10px 0;
   border-radius: 10px;
   position: relative;
+
+  &:focus-within {
+    outline-offset: 1px;
+    outline: -webkit-focus-ring-color auto 1px;
+  }
 `;
 
 export const Input = styled.input`
@@ -18,7 +23,7 @@ export const Input = styled.input`
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  visibility: hidden;
+  opacity: 0;
 `;
 
 export const Label = styled.label`

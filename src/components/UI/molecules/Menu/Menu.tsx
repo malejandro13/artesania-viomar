@@ -19,9 +19,17 @@ export const Menu = () => {
     };
   }, [router.asPath]);
 
+  const buttonAriaLabel = !isMenuOpen
+    ? 'Al hacer click en este botón se abrirá una ventana de dialogo donde podrás navegar por el menú'
+    : 'Al hacer click en este botón se cerrará la ventana de dialogo del menú'
+
   return (
     <MenuWrapper>
-     <MenuButton open={isMenuOpen} onClick={handleOnClickButtonMenu} />
+     <MenuButton
+      ariaLabel={`Menú. ${buttonAriaLabel}`}
+      open={isMenuOpen}
+      onClick={handleOnClickButtonMenu}
+    />
      <MenuNavigation currentPage={currentPage} menuList={MENU_LIST} open={isMenuOpen} />
     </MenuWrapper>
   );

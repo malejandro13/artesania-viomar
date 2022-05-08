@@ -23,22 +23,30 @@ export const Carousel = ({
       <CarouselWrapper>
         <CarouselIndicators>
           {slides.map((_, index) => (
-            <CarouselIndicator
-              onClick={() => setActive(index)}
-              key={index}
-              className={`${active === index ? 'active' : ''}`}
-            />
+            <li key={index}>
+              <CarouselIndicator
+                aria-label={`Seleccionar imagen ${index + 1} de ${length}`}
+                onClick={() => setActive(index)}
+                className={`${active === index ? 'active' : ''}`}
+                tabIndex={0}
+              />
+            </li>
           ))}
         </CarouselIndicators>
         <CarouselContent {...handlers} style={style}>
           {beforeIndices.map(i => (
-            <CarouselChild key={`before-indices-${i}`}>{slides[i]}</CarouselChild>
+            <CarouselChild ariaHidden key={`before-indices-${i}`}>{slides[i]}</CarouselChild>
           ))}
           {slides.map((slide, index) => (
-            <CarouselChild key={`slide-indices-${index}`}>{slide}</CarouselChild>
+            <CarouselChild
+              key={`slide-indices-${index}`}
+              ariaHidden={active !== index}
+            >
+              {slide}
+            </CarouselChild>
           ))}
           {afterIndices.map(i => (
-            <CarouselChild key={`after-indices-${i}`}>{slides[i]}</CarouselChild>
+            <CarouselChild ariaHidden key={`after-indices-${i}`}>{slides[i]}</CarouselChild>
           ))}
         </CarouselContent>
       </CarouselWrapper>

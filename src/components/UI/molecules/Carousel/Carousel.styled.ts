@@ -20,7 +20,7 @@ export const CarouselIndicators = styled.ol`
   margin: 0 auto;
 `;
 
-export const CarouselIndicator = styled.li`
+export const CarouselIndicator = styled.button`
   position: relative;
   flex: 0 1 auto;
   width: .8em;
@@ -29,6 +29,7 @@ export const CarouselIndicator = styled.li`
   margin: 0 0.3em;
   border: 2px solid #fff;
   cursor: pointer;
+  background: initial;
   &:hover {
     background: #fff;
   }

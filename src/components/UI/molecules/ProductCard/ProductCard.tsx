@@ -13,6 +13,7 @@ export const ProductCard = ({
   ctaText,
   ctaLink,
   ctaAriaLabel,
+  ariaLabel,
 }: ProductCardProps) => {
   const [openLightBox, setOpenLightBox] = useState(false);
   const showLightBox = !!images.length;
@@ -25,9 +26,11 @@ export const ProductCard = ({
     setOpenLightBox(false);
   };
 
+  const numberOfImages = images.length > 1 ? `${images.length} Fotos` : `${images.length} Foto`;
+
   return (
     <>
-      <Card tabIndex={0}>
+      <Card tabIndex={0} aria-label={ariaLabel}>
         <ImageBox>
           <Image
             src={url}
@@ -40,8 +43,11 @@ export const ProductCard = ({
           />
         </ImageBox>
         {showLightBox && 
-          <LightBoxButton onClick={handleClickOpenLightBox}>
-            {images.length > 1 ? `${images.length} Fotos` : `${images.length} Fotos`}
+          <LightBoxButton
+            aria-label={`Este producto tiene ${numberOfImages}. Al hacer click en este botón se abrirá una ventana de dialogo donde podrás ver las fotografías.`}
+            onClick={handleClickOpenLightBox}
+          >
+            {numberOfImages}
           </LightBoxButton>
         } 
         <ContentBox className="contentBx">
