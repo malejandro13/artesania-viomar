@@ -5,7 +5,7 @@ import { HeaderWrapper, Logo } from './Header.styled';
 export const Header = () => (
   <HeaderWrapper>
     <Link href="/" passHref>
-      <Logo>Viomar</Logo>
+      <Logo aria-label="Logo Artesania Viomar, volver a la página de inicio">Viomar</Logo>
     </Link>
     <Menu />
   </HeaderWrapper>

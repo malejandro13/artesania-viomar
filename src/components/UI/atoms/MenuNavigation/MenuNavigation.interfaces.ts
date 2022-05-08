@@ -1,13 +1,15 @@
 export interface MenuObject {
   label: string;
+  ariaLabel: string;
   link: string;
 }
 
 export interface MenuNavigationProps {
+  currentPage: string;
   menuList: MenuObject[];
-  isMenuOpen?: boolean;
+  open?: boolean;
 }
 
 export interface ListProps {
-  isMenuOpen?: boolean;
+  open?: boolean;
 }

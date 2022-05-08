@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const List = styled.ul`
   position: absolute;
@@ -11,13 +11,12 @@ export const List = styled.ul`
 export const Item = styled.li`
   list-style: none;
   display: inline-block;
-  transition: 0.5s;
-  background-color: rgba(255, 255, 255, 0.25);
+  transition: .5s;
+  background-color: rgba(255, 255, 255, .25);
   padding: 5px;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  border: 2px solid rgba(255, 255, 255, .25);
   border-radius: 10px;
   margin: 0 3px;
-  height: 50px;
 
   &::before {
     position: absolute;
@@ -27,7 +26,7 @@ export const Item = styled.li`
     font-size: 5em;
     content: attr(data-text);
     white-space: nowrap;
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, .3);
     opacity: 0;
     font-weight: 700;
     pointer-events: none;
@@ -41,9 +40,8 @@ export const Item = styled.li`
     border: 2px solid rgba(255, 255, 255, 1);;
   }
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     margin: 0 10px;
-    height: 80px;
 
     &::before {
       top: -200px;
@@ -51,10 +49,12 @@ export const Item = styled.li`
       font-size: 8em;
     }
   }
-    
 `;
 
 export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  height: 100%;
   background: none;
   border: none;
   cursor: pointer;
@@ -63,7 +63,7 @@ export const Button = styled.button`
 export const Image = styled.img`
   max-width: 50px;
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     max-width: 80px;
   }
 `;

@@ -8,14 +8,15 @@ export const Text = styled.p`
     line-height: 1.2em;
     font-weight: 700;
 
-    @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+    @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
       font-size: 4rem;
     }    
   }
   
   &.typography--variant-h2 {
-    font-size: 3.75rem;
+    font-size: 1.5em;
     font-weight: 600;
+    letter-spacing: 1px;
   }
   
   &.typography--variant-h3 {
@@ -44,7 +45,7 @@ export const Text = styled.p`
   }
   
   &.typography--variant-subheading2 {
-    font-size: 0.875rem;
+    font-size: .875rem;
     font-weight: 500;
   }
 
@@ -54,6 +55,6 @@ export const Text = styled.p`
   }
   
   &.typography--variant-body2 {
-    font-size: 0.875rem;
+    font-size: .875rem;
   }
 `;

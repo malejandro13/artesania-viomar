@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     padding: 20px 100px;
   }
 `;

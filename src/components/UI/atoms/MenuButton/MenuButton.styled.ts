@@ -16,10 +16,10 @@ export const Button = styled.button<ButtonProps>`
     border-radius: 3px;
     z-index: 3;
     transform-origin: 4px 0px;
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+    transition: transform .5s cubic-bezier(.77,.2,.05,1.0), background .5s cubic-bezier(.77,.2,.05,1.0), opacity .55s ease;
   }
 
-  ${({ isMenuOpen }) => isMenuOpen && `
+  ${({ open }) => open && `
     & span:first-child {
       opacity: 1;
       transform: rotate(45deg) translate(1px, -1px);
@@ -28,7 +28,7 @@ export const Button = styled.button<ButtonProps>`
     & span:nth-child(2)
     {
       opacity: 0;
-      transform: rotate(0deg) scale(0.2, 0.2);
+      transform: rotate(0deg) scale(.2, .2);
     }
 
     & span:last-child
@@ -37,7 +37,7 @@ export const Button = styled.button<ButtonProps>`
     }
   `}
 
-  @media (min-width: ${({theme: { breakpoints }}) => breakpoints.medium}) {
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     display: none;
   }
 `

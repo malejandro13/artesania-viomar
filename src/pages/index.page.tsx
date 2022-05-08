@@ -1,14 +1,11 @@
 import type { NextPage } from 'next'
-import { Header } from '@components/UI/organisms/Header';
 import { MainContent } from '@components/UI/organisms/MainContent';
 import { Thumb } from '@components/UI/atoms/Thumb';
 import { ThumbNames, THUMBS } from '@constants/thumb';
 import { useState } from 'react';
 import { MAIN_CONTENT_LIST } from '@constants/mainContent';
 import { MainContentProps } from '@components/UI/organisms/MainContent/MainContent.interfaces';
-import { SocialMedia } from '@components/UI/molecules/SocialMedia';
-import { SOCIAL_MEDIA_LIST } from '@constants/socialMedia';
-import { Section } from './index.styled';
+import { Layout } from '@components/UI/organisms/Layout';
 
 const Home: NextPage = () => {
   const [mainContentInfo, setMainContentInfo] = useState<MainContentProps>(MAIN_CONTENT_LIST[ThumbNames.viomar])
@@ -18,16 +15,14 @@ const Home: NextPage = () => {
   };
 
   return (
-    <Section >
-      <Header />
+    <Layout alignItems="center">
       <MainContent {...mainContentInfo} />
       <Thumb
         thumbs={THUMBS}
         onSelectedThumb={handleOnSelectedThumb}
       />
-      <SocialMedia socialMediaList={SOCIAL_MEDIA_LIST} />
-    </Section>
+    </Layout>
   );
-}
+};
 
-export default Home
+export default Home;

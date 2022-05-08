@@ -4,6 +4,9 @@
     "paths": {
       "@components/*": ["components/*"],
       "@constants/*": ["utils/constants/*"],
+      "@hooks/*": ["hooks/*"],
+      "@graphql/*": ["graphql/*"],
+      "@styles/*": ["styles/*"],
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

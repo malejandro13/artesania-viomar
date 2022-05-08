@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ThumbProps, ThumbObject } from './Thumb.interfaces';
-import { Button, Image, Item, List } from './Thumb.styled';
+import { Button, Item, List } from './Thumb.styled';
+import { Image } from '@components/UI/atoms/Image';
 
 export const Thumb = ({
   thumbs,
@@ -27,7 +28,14 @@ export const Thumb = ({
           onClick={() => handleSelectedThumb(thumbName)}
         >
           <Button>
-            <Image src={imageURL} alt={imageAltText} />
+            <Image
+              src={imageURL}
+              width={90}
+              aspectRatio="4:3"
+              fit="pad"
+              layout="intrinsic"
+              alt={imageAltText} 
+            />
           </Button>
         </Item>
       ))}

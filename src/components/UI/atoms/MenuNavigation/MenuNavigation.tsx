@@ -1,21 +1,19 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { MenuObject, MenuNavigationProps } from './MenuNavigation.interfaces';
 import { List, Item, Anchor } from './MenuNavigation.styled';
 
-export const MenuNavigation = ({ menuList, isMenuOpen }: MenuNavigationProps) => {
-  const router = useRouter();
-  return (
-    <List isMenuOpen={isMenuOpen}>
-      {menuList.map(({ label, link }: MenuObject) => (
+export const MenuNavigation = ({ currentPage, menuList, open }: MenuNavigationProps) => (
+  <nav aria-label="Menu principal">
+    <List open={open} >
+      {menuList.map(({ label, ariaLabel, link }: MenuObject) => (
         <Item key={`menu-${label}`}>
           <Link href={link} passHref>
-            <Anchor className={router.pathname === link ? 'active' : ''}>
+            <Anchor className={currentPage === link ? 'active' : ''} aria-label={ariaLabel}>
               {label}
             </Anchor>
           </Link>
         </Item>
       ))}
     </List>
-  )
-};
+  </nav>
+);
