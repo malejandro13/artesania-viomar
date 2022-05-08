@@ -19,12 +19,12 @@ export const Item = styled.li`
   margin: 0 3px;
 
   &::before {
+    content: attr(data-text) / "";
     position: absolute;
     top: -120px;
     right: 0;
     left: -40px;
     font-size: 5em;
-    content: attr(data-text);
     white-space: nowrap;
     color: rgba(0, 0, 0, .3);
     opacity: 0;

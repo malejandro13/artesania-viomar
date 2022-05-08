@@ -1,9 +1,13 @@
+export interface Image {
+  url: string;
+  description: string;
+};
+
 export interface MainContentProps {
   title: string;
-  paragraph: string;
-  ctaUrl: string;
+  description: string;
   ctaText: string;
+  ctaLink: string;
   ctaAriaLabel: string;
-  imageUrl: string;
-  imageAltText: string;
+  image: Image;
 };
