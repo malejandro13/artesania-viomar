@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Typography } from '@components/UI/atoms/Typography';
 import { ProductCardProps } from './ProductCard.interfaces';
-import { Card, ImageBox, ContentBox, Anchor, ImagesSlide, LightBoxButton } from './ProductCard.styled';
+import { Card, ImageBox, ContentBox, Anchor, ImagesSlide, LightBoxButton, ProductCode } from './ProductCard.styled';
 import { MainImageResponse } from 'graphql/interfaces/product';
 import { LightBox } from '@components/UI/molecules/LightBox';
 import { Image } from '@components/UI/atoms/Image';
+import { colors } from 'styles/theme';
 
 export const ProductCard = ({
   mainImage: { url, description },
@@ -14,6 +15,7 @@ export const ProductCard = ({
   ctaLink,
   ctaAriaLabel,
   ariaLabel,
+  code,
 }: ProductCardProps) => {
   const [openLightBox, setOpenLightBox] = useState(false);
   const showLightBox = !!images.length;
@@ -49,11 +51,14 @@ export const ProductCard = ({
           >
             {numberOfImages}
           </LightBoxButton>
-        } 
+        }
         <ContentBox className="contentBx">
-          <Typography variant="h2" color="#fff">{title}</Typography>
+          <Typography variant="h2" color={colors.white}>{title}</Typography>
           <Anchor aria-label={ctaAriaLabel} href={ctaLink} target="_blank">{ctaText}</Anchor>
         </ContentBox>
+        <ProductCode>
+          <Typography variant="body2" color={colors.white}>{code}</Typography>
+        </ProductCode>
       </Card>
       {showLightBox && 
         <LightBox open={openLightBox} onClose={handleCloseLightBox}>

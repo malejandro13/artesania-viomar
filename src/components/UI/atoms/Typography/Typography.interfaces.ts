@@ -8,7 +8,7 @@ export enum TypographyElements {
   subheading1 = "h6",
   subheading2 = "h6",
   body1 = "p",
-  body2 = "p",
+  body2 = "span",
 };
 
 type TypographyVariants = keyof typeof TypographyElements;

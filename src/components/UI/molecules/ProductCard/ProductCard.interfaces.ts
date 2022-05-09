@@ -8,4 +8,5 @@ export interface ProductCardProps {
   ctaLink: string;
   ctaAriaLabel: string;
   ariaLabel: string;
+  code: string;
 };
