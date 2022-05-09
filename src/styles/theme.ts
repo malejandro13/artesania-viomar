@@ -1,7 +1,7 @@
-const colors = {
+export const colors = {
   primary: '#0070f3',
   white: '#fff',
-}
+};
 
 const breakpoints = {
   medium: {
@@ -12,7 +12,7 @@ const breakpoints = {
     value: 1024,
     unit: 'px',
   },
-}
+};
 
 export const theme = {
   colors,

@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { useEffect, useMemo, useState } from 'react';
 import { ProductContent, ProductsFilterWrapper, ProductsWrapper } from './artesania.styled';
 import { Products } from '@components/UI/organisms/Products';
@@ -10,6 +11,7 @@ import { getCategories } from 'graphql/queries/category';
 import { CategoryDataResponse } from 'graphql/interfaces/category';
 import { getProducts } from 'graphql/queries/product';
 import { Layout } from '@components/UI/organisms/Layout';
+import nextSeoConfig from 'config/next-seo.config';
 
 const Leather = ({ products: productsResponse, productTypes, category }: LeatherPageProps) => {
   const initialSelectedFilters = useMemo(() => {
@@ -38,6 +40,10 @@ const Leather = ({ products: productsResponse, productTypes, category }: Leather
 
   return (
     <Layout>
+      <NextSeo
+        {...nextSeoConfig}
+        title={`Artesanía en ${category} | Artesanía Viomar`}
+      />
       <ProductContent>
         <ProductsFilterWrapper>
           <ProductsFilter

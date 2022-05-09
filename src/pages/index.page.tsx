@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import { MainContent } from '@components/UI/organisms/MainContent';
 import { Thumb } from '@components/UI/atoms/Thumb';
 import { useState } from 'react';
@@ -6,6 +7,7 @@ import client from '../../apollo-client';
 import { getLandingPageInfo } from 'graphql/queries/landingPage';
 import { LandingPageProps } from './index.interfaces';
 import { LandingPageDataResponse } from 'graphql/interfaces/landingPage';
+import nextSeoConfig from 'config/next-seo.config';
 
 const Home = ({ landingPageInfoList }: LandingPageProps) => {
   const [mainContentInfo, setMainContentInfo] = useState<LandingPageDataResponse>(landingPageInfoList[0])
@@ -18,6 +20,9 @@ const Home = ({ landingPageInfoList }: LandingPageProps) => {
 
   return (
     <Layout alignItems="center">
+      <NextSeo
+        {...nextSeoConfig}
+      />
       <MainContent {...mainContentInfo} />
       <Thumb
         thumbs={landingPageInfoList}

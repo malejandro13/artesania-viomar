@@ -184,3 +184,14 @@ export const LightBoxButton = styled.button`
   cursor: pointer;
   z-index: 3;
 `;
+
+export const ProductCode = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, .2);
+  border-bottom-right-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 3;
+`;

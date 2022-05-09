@@ -18,6 +18,7 @@ export const Products = ({
           ctaLink,
           ctaAriaLabel,
           ariaLabel,
+          code,
         }: ProductDataResponse,
         index: number,
       ) => (
@@ -30,6 +31,7 @@ export const Products = ({
             ctaText={ctaText}
             ctaLink={ctaLink}
             ctaAriaLabel={ctaAriaLabel}
+            code={code}
           />
         </Item>
       ))
