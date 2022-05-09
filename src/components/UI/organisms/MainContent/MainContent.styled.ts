@@ -18,10 +18,6 @@ export const Main = styled.main`
 export const TextBox = styled.div`
   position: relative;
   width: 100%;
-
-  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
-    max-width: 630px; 
-  }
 `;
 
 export const Anchor = styled.a`
