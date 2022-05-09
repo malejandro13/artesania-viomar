@@ -13,6 +13,7 @@ export const List = styled.ul`
   width: 50px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  z-index: 2;
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     background-color: initial;

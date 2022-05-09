@@ -5,7 +5,7 @@ export const MenuWrapper = styled.div`
   top: 30px;
   right: 30px;
   user-select: none;
-  z-index: 2;
+  z-index: 3;
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     position: initial;
