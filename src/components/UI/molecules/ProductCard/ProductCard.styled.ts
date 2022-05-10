@@ -23,6 +23,7 @@ export const Card = styled.div`
   }
 
   &::after {
+    content: "VIOMAR";
     content: "VIOMAR" / "";
     position: absolute;
     top: 65%;

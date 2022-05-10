@@ -19,11 +19,12 @@ export const Item = styled.li`
   margin: 0 3px;
 
   &::before {
+    content: attr(data-text);
     content: attr(data-text) / "";
     position: absolute;
     top: -120px;
     right: 0;
-    left: -40px;
+    left: -25px;
     font-size: 5em;
     white-space: nowrap;
     color: rgba(0, 0, 0, .3);
@@ -38,6 +39,12 @@ export const Item = styled.li`
 
   &.active {
     border: 2px solid rgba(255, 255, 255, 1);;
+  }
+
+  @media (min-width: ${({theme: { breakpoints: { medium: { value, unit }}}}) => `${value}${unit}`}) {
+    &::before {
+      left: -40px;
+    }
   }
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
@@ -58,6 +65,11 @@ export const Button = styled.button`
   background: none;
   border: none;
   cursor: pointer;
+  width: 70px;
+
+  @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
+    width: 100%;
+  }
 `;
 
 export const Image = styled.img`
