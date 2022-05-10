@@ -24,8 +24,18 @@ export const Dialog = ({
     };
   }, []);
 
+  const preventPageScrolling = () => {
+    const body = document.querySelector('body') as HTMLBodyElement;
+    if(open) {
+      body.style.cssText = 'position:fixed;overflow-y:hidden;';
+    } else {
+      body.removeAttribute('style');
+    }
+  };
+
   useEffect(() => {
     dialogElement?.current?.focus();
+    preventPageScrolling()
   }, [open]);
 
   if(!open) {
