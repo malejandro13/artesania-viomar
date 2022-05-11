@@ -33,6 +33,9 @@ export const ProductCard = ({
   return (
     <>
       <Card tabIndex={0} aria-label={ariaLabel}>
+        <ProductCode>
+          <Typography variant="body2" color={colors.white}>{code}</Typography>
+        </ProductCode>
         <ImageBox>
           <Image
             src={url}
@@ -56,9 +59,6 @@ export const ProductCard = ({
           <Typography variant="h2" color={colors.white}>{title}</Typography>
           <Anchor aria-label={ctaAriaLabel} href={ctaLink} target="_blank">{ctaText}</Anchor>
         </ContentBox>
-        <ProductCode>
-          <Typography variant="body2" color={colors.white}>{code}</Typography>
-        </ProductCode>
       </Card>
       {showLightBox && 
         <LightBox open={openLightBox} onClose={handleCloseLightBox}>
