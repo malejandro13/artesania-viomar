@@ -16,6 +16,7 @@ export const Text = styled.p`
   &.typography--variant-h2 {
     font-size: 1.5em;
     font-weight: 600;
+    padding: 0 1rem;
   }
   
   &.typography--variant-h3 {
