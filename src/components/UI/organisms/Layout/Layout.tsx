@@ -1,4 +1,3 @@
-import type { NextPage } from 'next'
 import { Header } from '@components/UI/organisms/Header';
 import { SocialMedia } from '@components/UI/molecules/SocialMedia';
 import { SOCIAL_MEDIA_LIST } from '@constants/socialMedia';

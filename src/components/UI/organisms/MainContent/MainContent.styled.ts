@@ -59,7 +59,7 @@ export const ImageBox = styled.div`
   display: block;
   max-width: 100%;
   width: 400px;
-  margin: 4rem 0 2rem 0;
+  margin: 6rem 0 3rem 0;
   padding: 1rem;
   z-index: 1;
   
@@ -72,4 +72,8 @@ export const ImageBox = styled.div`
     margin-top: 1.25rem;
     padding: 3rem;
   }
+`;
+
+export const Description = styled.div`
+  margin: 2rem 0 3rem 0;
 `;
