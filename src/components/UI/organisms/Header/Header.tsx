@@ -13,7 +13,7 @@ export const Header = () => {
   const controlHeader = () => {
     if (typeof window !== 'undefined') { 
       setHeaderConfig({
-        showHeader: !!!(window.scrollY > headerConfig.lastScrollY),
+        showHeader: !!!(window.scrollY > headerConfig.lastScrollY && window.scrollY > 100),
         lastScrollY: window.scrollY,
         showHeaderBackground: window.scrollY > 50,
       }); 
