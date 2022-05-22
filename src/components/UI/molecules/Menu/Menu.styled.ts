@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MenuWrapper = styled.div`
   position: absolute;
-  top: 30px;
+  top: 20px;
   right: 30px;
   user-select: none;
   z-index: 3;

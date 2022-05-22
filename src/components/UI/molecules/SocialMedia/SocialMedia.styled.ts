@@ -1,23 +1,29 @@
 import styled from "styled-components";
 
 export const List = styled.ul`
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
+  position: absolute;
+  bottom: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   background-color: rgba(0, 0, 0, .2);
-  right: 0;
-  width: 50px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  width: 100%;
+  height: 50px;
   z-index: 2;
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
     background-color: initial;
     right: 5px;
+    justify-content: center;
+    flex-direction: column;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    width: 50px;
   }
 `;
 

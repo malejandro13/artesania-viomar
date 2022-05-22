@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Typography } from '@components/UI/atoms/Typography';
 import { MainContentProps } from './MainContent.interfaces';
-import { Anchor, ImageBox, Main, TextBox } from './MainContent.styled';
+import { Anchor, Description, ImageBox, Main, TextBox } from './MainContent.styled';
 import { Image } from '@components/UI/atoms/Image';
 
 export const MainContent = ({
@@ -15,9 +15,9 @@ export const MainContent = ({
   <Main>
     <TextBox>
       <Typography variant="h1">{title}</Typography>
-      <div role="region" aria-live="polite">
+      <Description role="region" aria-live="polite">
         <Typography variant="body1">{description}</Typography>
-      </div>
+      </Description>
       <Link href={ctaLink} passHref>
         <Anchor aria-label={ctaAriaLabel}>{ctaText}</Anchor>
       </Link>

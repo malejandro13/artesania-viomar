@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const List = styled.ul`
   position: absolute;
   left: 50%;
-  bottom: 20px;;
+  bottom: 80px;
   transform: translateX(-50%);
   display: flex;
 `;
