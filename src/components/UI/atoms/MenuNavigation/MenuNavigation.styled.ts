@@ -16,6 +16,7 @@ export const List = styled.ul<ListProps>`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    height: 100vh;
   `}
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {

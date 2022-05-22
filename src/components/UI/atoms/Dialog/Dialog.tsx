@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
+import { preventPageScrolling } from 'utils/helpers/scrolling';
 import { DialogProps } from './Dialog.interfaces';
 import { DialogClose, DialogContent, DialogWrapper } from './Dialog.styled';
 
@@ -24,18 +25,9 @@ export const Dialog = ({
     };
   }, []);
 
-  const preventPageScrolling = () => {
-    const body = document.querySelector('body') as HTMLBodyElement;
-    if(open) {
-      body.style.cssText = 'position:fixed;overflow-y:hidden;';
-    } else {
-      body.removeAttribute('style');
-    }
-  };
-
   useEffect(() => {
     dialogElement?.current?.focus();
-    preventPageScrolling()
+    preventPageScrolling(open)
   }, [open]);
 
   if(!open) {
