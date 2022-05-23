@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useEffect } from 'react';
 import { CheckboxProps } from './Checkbox.interfaces';
 import { Input, InputGroup, Label } from './Checkbox.styled';
 
@@ -15,6 +15,10 @@ export const Checkbox = ({
   setChecked(!checked);
   onChange(e);
  }
+
+ useEffect(() => {
+  setChecked(initiallyChecked);
+ }, [initiallyChecked]);
 
  return (
   <InputGroup>

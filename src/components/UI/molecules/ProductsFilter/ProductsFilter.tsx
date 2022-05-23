@@ -10,8 +10,7 @@ import { Typography } from '@components/UI/atoms/Typography';
 import { useWindowSize } from 'hooks/useWindowSize';
 import { Size } from 'hooks/useWindowSize/useWindowSize.interfaces';
 
-export const ProductsFilter = ({ filters, onFiltered, initialSelectedFilters }: ProductsFilterProps) => {
-  const [selectedFilters, setSelectedFilters] = useState(initialSelectedFilters);
+export const ProductsFilter = ({ filters, onFiltered, productFilter }: ProductsFilterProps) => {
   const [openDialog, setOpenDialog] = useState(false);
   const { width }: Size = useWindowSize();
 
@@ -22,10 +21,9 @@ export const ProductsFilter = ({ filters, onFiltered, initialSelectedFilters }: 
 
   const handleOnChange = ({target: { checked, name }}: ChangeEvent<HTMLInputElement>) => {
     const filtered = {
-      ...selectedFilters,
+      ...productFilter,
       [name]: checked,
     };
-    setSelectedFilters(filtered);
     onFiltered(filtered);
   };
 
@@ -44,13 +42,13 @@ export const ProductsFilter = ({ filters, onFiltered, initialSelectedFilters }: 
           key={slug}
           id={slug}
           name={slug}
-          initiallyChecked={selectedFilters[slug as keyof object]}
+          initiallyChecked={productFilter[slug as keyof object]}
           label={name}
           onChange={handleOnChange}
         />
       ))}    
     </Fieldset>
-  ), [filters, selectedFilters]);
+  ), [filters, productFilter]);
 
   const filterTitle = (
     <FilterTitle aria-hidden>
