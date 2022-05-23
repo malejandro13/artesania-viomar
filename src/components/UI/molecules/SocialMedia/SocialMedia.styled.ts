@@ -10,7 +10,7 @@ export const List = styled.ul`
   background-color: rgba(0, 0, 0, .2);
   width: 100%;
   height: 50px;
-  z-index: 2;
+  z-index: 1;
 
   @media (min-width: ${({theme: { breakpoints: { large: { value, unit }}}}) => `${value}${unit}`}) {
     position: fixed;
