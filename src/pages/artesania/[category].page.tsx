@@ -48,7 +48,7 @@ const Leather = ({ products: productsResponse, productTypes, category }: Leather
         <ProductsFilterWrapper>
           <ProductsFilter
             filters={productTypes}
-            initialSelectedFilters={initialSelectedFilters}
+            productFilter={productFilter}
             onFiltered={handleOnFiltered} 
           />
         </ProductsFilterWrapper>
