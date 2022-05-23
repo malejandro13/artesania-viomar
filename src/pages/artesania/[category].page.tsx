@@ -26,9 +26,10 @@ const Leather = ({ products: productsResponse, productTypes, category }: Leather
   const [productFilter, setProductFilter] = useState(initialSelectedFilters);
 
   const products = useMemo(() =>
-    productsResponse.filter((product) =>
-      productFilter[product.productType as keyof object]
-  ), [productFilter]);
+    Object.values(productFilter).some(filter => filter)
+    ? productsResponse.filter((product) => productFilter[product.productType as keyof object])
+    : productsResponse
+  , [productFilter]);
 
   const handleOnFiltered = (filtered: object) => {
     setProductFilter(filtered)
