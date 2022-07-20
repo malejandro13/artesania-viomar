@@ -57,7 +57,13 @@ export const ProductCard = ({
         }
         <ContentBox className="contentBx">
           <Typography variant="h2" color={colors.white}>{title}</Typography>
-          <Anchor aria-label={ctaAriaLabel} href={ctaLink} target="_blank">{ctaText}</Anchor>
+          <Anchor
+            aria-label="¡Lo quiero!. Al hacer click en este enlace, se abrirá una nueva pestaña para solicitar información sobre el producto a través de Whatsapp"
+            href={`https://wa.me/56935091952?text=Me gustaría obtener más información de este producto: ${title}, código ${code}`}
+            target="_blank"
+          >
+            ¡Lo quiero!
+          </Anchor>
         </ContentBox>
       </Card>
       {showLightBox && 
